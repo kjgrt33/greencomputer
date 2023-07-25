@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .flex {
+        display: flex;
+        width: 500px;
+        height: 200px;
+        background: #ccc;
+        align-items: flex-start;
+      }
+      .flex div {
+        border: 1px solid #000;
+        background: #eee;
+        flex-basis: 200px;
+        /* flex-shrink: 1; /* flex-shrink: 1;이 기본값 */
+      }
+      .flex div:first-child {
+        flex-shrink: 0; /* 얘는 200을 준다는 의미 */
+      }
+      .flex div:nth-child(2) {
+        flex-shrink: 1; /* 얘는 150을 준다는 의미 */
+      }
+      .flex div:nth-child(3) {
+        flex-shrink: 1; /* 얘는 150을 준다는 의미 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div>11111111</div>
+      <div>22</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

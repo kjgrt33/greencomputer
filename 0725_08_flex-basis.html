@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .flex {
+        display: flex;
+        width: 500px;
+        background: #ccc;
+      }
+      .flex div {
+        border: 1px solid #000;
+        background: #eee;
+        flex-basis: 100px; /* flex-basis는 아이템(자식)의 기본 크기를 설정. 최소 100px이고 안에 내용이 더 길면 유연하게 내용만큼 넘어간다. */
+        /* width: 100px; */
+        /* flex-grow: 1; /* 1:1:1비율로 준다 */
+        /* flex:1; 은 flex-grow를 1 준다는 줄임 속성 */
+      }
+      .flex div:first-child {
+        flex-grow: 0; /* flex-grow: 0;는 기본값 */
+      }
+      .flex div:nth-child(2) {
+        flex-grow: 1;
+      }
+      .flex div:nth-child(3) {
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div>11111111</div>
+      <div>22</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

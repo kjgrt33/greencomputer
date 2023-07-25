@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .flex {
+        display: flex;
+        width: 500px;
+        height: 200px;
+        background: #ccc;
+      }
+      .flex div {
+        border: 1px solid #000;
+        background: #eee;
+      }
+      /*  align-self는 각각 정렬 하는 방법 */
+      .flex div:first-child {
+        align-self: start;
+        /* order:0; /* order: 0;이 기본값 */
+        order: 3;
+      }
+      .flex div:nth-child(2) {
+        align-self: flex-end;
+        order: 2;
+      }
+      .flex div:nth-child(3) {
+        align-self: center;
+        order: 1; /* 순서를 맨 첫번째로 위치하게 한다. */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div>11111111</div>
+      <div>22</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>
