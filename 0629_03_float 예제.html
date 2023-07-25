@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 100%;
+        max-width: 1280px; /* 1280px이상 안커지게 할거야. 1280보다 작아지면 부모의 100%로 다 쓰게 할꺼야. 대신 스크롤이 안생김 */
+        margin: 0 auto;
+        background: #ccc;
+        text-align: center;
+      }
+      .child {
+        width: 25%;
+        background: #000;
+        color: #fff;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      부모요소
+      <div class="child">자식요소</div>
+    </div>
+  </body>
+</html>

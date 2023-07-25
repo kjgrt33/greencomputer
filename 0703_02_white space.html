@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, "나눔고딕", Dotum, sans-serif;
+      }
+      p {
+        width: 500px;
+        border: 1px solid #000;
+      }
+      p.normal {
+        white-space: normal; /* defualt */
+        visibility: hidden;
+      }
+
+      /* 이 속성은 3개 같이 써야하며 자주 쓴다 */
+      p.nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 넘치는 글씨를 ... 처리 */
+      }
+
+      p.pre {
+        white-space: pre;
+        opacity: 0.5; /* 0은 안보임, 0.5는 반만 보임, 1은 보임 */
+      }
+      p.pre-wrap {
+        white-space: pre-wrap;
+      }
+      p.pre-line {
+        white-space: pre-line;
+      }
+      span img {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="normal">
+      normal 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할
+      책무를 진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리
+      또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+    </p>
+    <p class="nowrap">
+      nowrap 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할
+      책무를 진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리
+      또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+    </p>
+    <p class="pre">
+      pre 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를
+      진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는
+      정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+    </p>
+    <p class="pre-wrap">
+      pre-wrap 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할
+      책무를 진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리· 국민투표관리
+      또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+    </p>
+    <p class="pre-line">
+      pre-line 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할
+      책무를 진다. 중앙선거관리위원회는 법령의 범위안에서 선거관리· 국민투표관리
+      또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다.
+    </p>
+
+    <!-- vertical-align 예제 -->
+    <span>이미지<img src="images/menu1.jpg" alt="menu1" /></span>
+  </body>
+</html>

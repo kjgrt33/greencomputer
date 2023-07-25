@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      svg {
+        border: 1px solid #000;
+        /* svg 기본 default값이 130px * 150px/ */
+        width: 500px;
+        height: 500px;
+      }
+      .svg1 {
+        position: relative;
+        width: 500px;
+        height: 500px;
+      }
+      .svg1 p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .svg1 circle {
+        /* stroke-dasharray: 10, 30; 대쉬는 10이고 간격은 30 , stroke-dashoffset는 점선을 어디서부터 시작할 것인지 스타트는 3시방향*/
+        /* stroke-dasharray: 10, 30; */
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <circle cx="250" cy="250" r="100" stroke="#000" fill="none"></circle>
+      <text x="220" y="250">I love SVG!</text>
+    </svg>
+    <div class="svg1">
+      <p>I love SVG!</p>
+      <svg>
+        <circle cx="50%" cy="50%" r="100" stroke="#000" fill="none"></circle>
+      </svg>
+    </div>
+
+    <svg>
+      <g fill="none">
+        <path
+          stroke-dasharray="10"
+          stroke-dashoffset="0"
+          stroke="red"
+          d="M5 20 l215 0"
+        />
+        <path
+          stroke-dasharray="10"
+          stroke-dashoffset="100"
+          stroke="black"
+          d="M5 40 l215 0"
+        />
+        <path
+          stroke-dasharray="10"
+          stroke-dashoffset="200"
+          stroke="blue"
+          d="M5 60 l215 0"
+        />
+      </g>
+    </svg>
+  </body>
+</html>

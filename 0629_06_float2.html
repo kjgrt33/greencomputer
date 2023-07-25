@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 1200px;
+        margin: 0 auto;
+        border: 1px solid #000;
+        overflow: hidden; /* 높이 값으로 지정 해줘도 됨*/
+      }
+      .wrap > div {
+        width: 23%;
+        height: 100px;
+        float: left;
+        /* margin-left: 4%; */
+        margin-left: calc((100% - (23% * 4)) / 3);
+      } /* 마진값 계산 해주는 속성 calc : 연산자 앞 뒤로 공백처리 해야함! 우선순위는 ()괄호가 */
+
+      .wrap div:first-child {
+        background: rgb(56, 56, 56);
+        margin-left: 0;
+      }
+      .wrap div:nth-child(2) {
+        background: rgb(95, 95, 95);
+      }
+      .wrap div:nth-child(3) {
+        background: rgb(150, 150, 150);
+      }
+      .wrap div:nth-child(4) {
+        background: rgb(156, 156, 156);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>one</div>
+      <div>two</div>
+      <div>three</div>
+      <div>four</div>
+    </div>
+  </body>
+</html>

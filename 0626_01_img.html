@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img 태그</title>
+  </head>
+  <body>
+    <!-- 상대주소 경로 -->
+    <img src="images/menu1.jpg" alt="메뉴1" width="50" height="50" />
+    <img src="images/menu2.jpg" alt="메뉴2" style="width: 50px; height: 50px" />
+    <img src="images/menu3.jpg" alt="메뉴3" />
+    <img src="images/photo1.jpg" alt="photo1" width="50" height="50" />
+
+    <!-- 절대주소 경로 -->
+    <img
+      src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png"
+      alt="다음로고"
+    />
+
+    <a href="http://www.daum.net">다음</a>
+    <a href="http://www.daum.net">
+      <img
+        src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png"
+        alt="다음로고"
+      />
+    </a>
+
+    <!-- 이미지맵의 usemap은 id값처럼 중복으로 사용할 수 없음!!! -->
+    <!-- 그림판에 '사각형'을 그려서 왼쪽 상단/오른쪽 하단 좌표값을 찾아 기입하면됨 -->
+    <img src="images/map.jpg" alt="지도" usemap="#korea" />
+    <map name="korea">
+      <area
+        shape="rect"
+        coords="55, 506, 129, 537"
+        href="https://www.jejusi.go.kr/index.ac"
+        alt="제주시"
+      />
+    </map>
+
+    <!-- 그림판에 '원'을 그려서 중심 좌표값과 중심의 오른쪽 끝점을 빼서 계산하여 기입하면됨 -->
+    <img src="images/map.jpg" alt="지도" usemap="#korea1" />
+    <map name="korea1">
+      <area
+        shape="circle"
+        coords="92, 522, 30"
+        href="https://www.jejusi.go.kr/index.ac"
+        alt="제주시"
+      />
+    </map>
+
+    <!-- 그림판에 '다각형'을 그려서 다각형 모양으로 좌표값 두개 전부 기입하면됨 -->
+    <img src="images/map.jpg" alt="지도" usemap="#korea2" />
+    <map name="korea2">
+      <area
+        shape="poly"
+        coords="157, 260, 169, 259, 172, 283, 151, 284"
+        href="https://www.jejusi.go.kr/index.ac"
+        alt="가운데"
+      />
+    </map>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backgruond</title>
+    <style>
+      p,
+      span {
+        background: #ccc; /* background는 너비 높이값이 있든 내용이 있어야 스타일이 들어간다 */
+      }
+      div {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        /* background: beige; */
+        /* background: #ff0000;
+           opacity: 0.5; */
+        /*background-color: rgba(255, 0, 0, 0.5);*/
+        /*background-color: hsla(60, 100%, 50%, 1);*/
+        background-image: url(images/photo1.jpg);
+
+        /* background-size: 50%;  50px도 됨*/
+        /* background-size: cover;  큰비율을 맞추는 것*/
+        /* background-size: contain;  작은비율을 맞추는 것*/
+        background-size: 500px 500px; /*  background-size: 가로 세로 */
+
+        background-position: center;
+        /* background-position: center top;  
+        background-position: 100% 0%;  background-position: x축 y축; */
+
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <p>문단 태그</p>
+    <span>인라인 태그</span>
+    <div></div>
+  </body>
+</html>

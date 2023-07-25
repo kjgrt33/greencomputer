@@ -1,0 +1,63 @@
+@charset "utf-8";
+@font-face {
+  font-family: notosans, arial, sans-serif;
+  src: url(../webfonts/NotoSansKR-Regular.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+#wrap {
+  width: 1920px;
+  height: 100vh;
+  background: #eee;
+}
+.icon {
+  width: 1080px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.icon ul {
+  width: 100%;
+}
+.icon ul li {
+  float: left;
+  width: calc(100% / 8);
+  text-align: center;
+}
+.icon ul li a {
+  display: block;
+  padding-top: 52px;
+  font-size: 13px;
+}
+.icon ul li:first-child a {
+  background: url(../images/ico-write.png) center top no-repeat;
+}
+.icon ul li:nth-child(2) a {
+  background: url(../images/ico-eshopping.png) center top no-repeat;
+}
+.icon ul li:nth-child(3) a {
+  background: url(../images/ico-checkpaper.png) center top no-repeat;
+}
+.icon ul li:nth-child(4) a {
+  background: url(../images/ico-coin-48.png) center top no-repeat;
+}
+.icon ul li:nth-child(5) a {
+  background: url(../images/ico-call-48.png) center top no-repeat;
+}
+.icon ul li:nth-child(6) a {
+  background: url(../images/ico-cardregister-48.png) center top no-repeat;
+}
+.icon ul li:nth-child(7) a {
+  background: url(../images/ico-point-48.png) center top no-repeat;
+}
+.icon ul li:last-child a {
+  background: url(../images/ico-certificate-48.png) center top no-repeat;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gradient</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 1280px;
+        margin: 0 auto;
+        background: #ccc;
+      }
+      .hearder {
+        /* width:auto;가 기본이라 width값을 따로 지정해준게 아니기 때문에 border,padding이 포함되서 자리잡음 */
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      .content {
+        margin: 20px 0;
+        overflow: hidden; /* 자식요소가 float:left를 줌으로써 높이값을 잃어버리므로 높이값을 지정해주든 overflow:hidden;을 꼭 넣어주든 해야함 */
+      }
+      .content > div {
+        height: 500px;
+        float: left;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        box-sizing: border-box; /* padding과 boder값이 너비에 영향 안끼치도록 하려면 box-sizing:border-box를 줘야함 */
+      }
+      .nav {
+        width: 30%;
+      }
+      .section {
+        width: calc(
+          50% - 40px
+        ); /* width가 50%지만 margin값 때문에 떨어지므로 양쪽 마진값을 20+20px을 calc이라는 계산속성으로 빼줘야함  */
+        margin: 0 20px;
+      }
+      .content .aside {
+        width: 20%;
+        padding: 0; /* 부모를 같이 써줘야 padding값 먹음. 띄워도되고 위처럼 자식이니까 >를 해도됨. 위에 부모 > 자식 했기때문에 스타일을 먹기때문에 위에서 해제하려면 같이써줘야함 . */
+      }
+      .footer {
+        height: 100px;
+        clear: both; /* 위에 컨텐츠들의 float:left; 영향을 받으므로 딸려올라가기때문에 끊어줘야함 */
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="hearder">hearder</div>
+      <div class="content">
+        <div class="nav">nav</div>
+        <div class="section">section</div>
+        <div class="aside">aside</div>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

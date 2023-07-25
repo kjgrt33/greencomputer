@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폰트어썸 아이콘 문자(Unicode 방식)</title>
+    <style>
+      @font-face {
+        font-family: solid;
+        src: url(webfonts/fa-solid-900.woff2) format(woff2);
+      }
+      h1 {
+        font-family: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 폰트어썸에서 Unicode로 쓰는 방식은 &#x로 먼저 쓰고 코드명쓰고 ; 구조에 넣고 이건 link없이 @font-face로 불러온다.-->
+    <h1>&#xf015;</h1>
+  </body>
+</html>

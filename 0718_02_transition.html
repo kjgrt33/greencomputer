@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .nav {
+        position: relative;
+        width: 700px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .nav a {
+        position: relative;
+        display: block;
+        float: left;
+        width: 20%;
+        text-decoration: none;
+        color: #333;
+        padding: 20px 0 40px;
+      }
+      .nav a:hover {
+        color: #8ac007;
+      }
+      .effect {
+        position: absolute;
+        /* width: 8px;
+        height: 8px;
+        background: #000; */
+        left: -25%;
+        transition: 1s;
+      }
+      .nav a:first-child:hover ~ .effect {
+        left: 10%;
+      }
+      .nav a:nth-child(2):hover ~ .effect {
+        left: 30%;
+      }
+      .nav a:nth-child(3):hover ~ .effect {
+        left: 50%;
+      }
+      .nav a:nth-child(4):hover ~ .effect {
+        left: 70%;
+      }
+      .nav a:nth-child(5):hover ~ .effect {
+        left: 90%;
+      }
+      .line .effect {
+        width: 70px;
+        height: 3px;
+        background: #8ac007;
+        margin-left: -35px;
+        bottom: 30px;
+      }
+      .dot .effect {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #8ac007;
+        bottom: 14px;
+      }
+      .dot a::after {
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #8ac007;
+      }
+      .dot::after {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #8ac007;
+      }
+      .box a::after,
+      .box .effect {
+        background: url(images/target.png) no-repeat;
+      }
+      .box a::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 45%;
+        bottom: 0;
+        /* background-position은 이미지 위치점에서 그 전체 이미지 도형을 땡겨와서 써야하므로 -음의값이다.(이미지 전체 자체가 움직이는걸로 생각해야함) */
+        background-position: -64px 0;
+      }
+      .box .effect {
+        width: 8px;
+        height: 8px;
+        background-position: -26px 0;
+        bottom: 5px;
+        margin-left: -3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav line">
+        <a href="#">Html</a>
+        <a href="#">CSS</a>
+        <a href="#">Javascript</a>
+        <a href="#">JQuery</a>
+        <a href="#">portfolio</a>
+        <div class="effect"></div>
+      </div>
+      <div class="nav dot">
+        <a href="#">Html</a>
+        <a href="#">CSS</a>
+        <a href="#">Javascript</a>
+        <a href="#">JQuery</a>
+        <a href="#">portfolio</a>
+        <div class="effect"></div>
+      </div>
+      <div class="nav box">
+        <a href="#">Html</a>
+        <a href="#">CSS</a>
+        <a href="#">Javascript</a>
+        <a href="#">JQuery</a>
+        <a href="#">portfolio</a>
+        <div class="effect"></div>
+      </div>
+    </div>
+  </body>
+</html>

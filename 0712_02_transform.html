@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+      }
+      .div01 {
+        /* transform: translate(
+          100px,
+          -50px
+        ); /* translate는 현재위치에서 이동하는것 x/y축 */
+        transform: translateX(200px); /* X축만 이동하는것*/
+      }
+      .div02 {
+        /*transform: scale(
+          0.5,
+          1
+        ); /* scale는 크기가 커지는 것 x/y축. scale(2)는 2배 커짐  */
+        transform: scaleX(2);
+      }
+      .div03 {
+        transform: rotate(-30deg); /* rotate는 회전하는것 x/y축 */
+      }
+      .div04 {
+        /* transform: skew(10deg, 20deg); /* skew 기울이는것 x/y축 */
+        transform: skewY(-10deg);
+      }
+      p {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        background: #f00;
+        /*transform: scale(1);
+        transform-origin: left top; /* transform-origin는 변환된 요소의 위치를 변경. 가로/세로 */
+        transform: translate(-50%, -50%) scale(2) skew(10deg) rotate(20deg); /* 블록요소를 수직수평가운데를 옮길 수 있는 방법!!! -50%를 줌으로써 위치의 중심점을 옮겨서 이동시켜주고 position값으로 움직여야한다. */
+      }
+      section {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+      }
+      section:hover img {
+        transform: scale(2);
+        transition: 0.5s;
+      }
+      article {
+        width: 100px;
+        height: 100px;
+        background: green;
+        transition-property: width, height; /* 전환 효과에 대한 CSS 속성의 이름을 지정 */
+        transition-duration: 0.5s, 1s; /* 전환 효과가 완료되는 데 걸리는 시간 */
+        transition-timing-function: ease; /* 전환 효과의 속도 곡선을 지정 */
+        transition-delay: 1s; /* 전환 효과에 대한 지연(초)을 지정 - 1초 있다가 진행 */
+        /* transition: width 0.5s, height 1s; 단축속성 */
+      }
+      article:hover {
+        width: 200px;
+        height: 300px;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div01"></div>
+    <div class="div02"></div>
+    <div class="div03"></div>
+    <div class="div04"></div>
+    <div class="div05">
+      <p></p>
+    </div>
+    <section>
+      <img src="images/photo2.jpg" alt="photo2" />
+    </section>
+    <article></article>
+  </body>
+</html>

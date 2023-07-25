@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block 태그 / Inline 태그</title>
+    <style>
+      body {
+        /* text-align: center; /* 인라인(a 태그)은 너비,높이를 가질 수 없는데 크기의 기준이 있으면 정렬이 됨 ex) 부모 body에 정렬값을 주면 a 태그도 먹음  */
+        text-align: right; /* 문자, 이미지, 인라인 요소 */
+      }
+
+      p,
+      a {
+        background: #ccc; /* 16진수 6자리 기입(0~9,a~f)  
+        ex) #cccccc; 앞 두자리는 R / 가운데 두자리는 G / 마지막 두자리는 B 
+        그래서 중복되면 3자리 또는 6자리(기본) 기입해야함 */
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        padding: 50px;
+        margin: 50px; /* 인라인은 margin 상하는 먹지 못함, 좌우는 먹음(텍스트이므로 기존 갖고있는 여백이 있기때문에) */
+      }
+
+      p {
+        margin: 50px auto; /* 블록요소를 가운데 정렬 하는 방법은 margin:0 auto */
+      }
+
+      img {
+        width: 10px;
+      }
+
+      h1 {
+        margin: 0 auto; /* h1도 블록요소인데 가운데 정렬 하려면 margin : 0 auto; 하면 가운데 정렬로 가야하는데 안감. 블록 자체가 크기(width)를 100%를 차지하기 때문에 갈수가 없다. 그렇기에 아래로 내려가는 건데 그러므로 크기(width)를 정확한 값을 줘야한다 */
+        background: red;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>p 태그(블록) : 문단 태그</p>
+    <p>p 태그(블록) : 문단 태그</p>
+    <a href="#">a 태그(인라인) : 링크 태그</a>
+    <a href="#">a 태그(인라인) : 링크 태그</a>
+    <img src="images/menu1.jpg" alt="menu1" />
+    <img src="images/menu1.jpg" alt="menu1" />
+    <img src="images/menu1.jpg" alt="menu1" />
+    <h1>h1 태그(블록) : 제목 태그</h1>
+  </body>
+</html>

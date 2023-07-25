@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .gnb {
+        padding-bottom: 500px;
+      }
+      .gnb > li {
+        width: 100px;
+        background: #ccc;
+        float: left;
+        position: relative;
+        text-align: center; /*a의 자식요소가 가는것(현재는 문자) */
+      }
+      .gnb > li:first-child {
+        width: 200px;
+      }
+      .gnb > li > a {
+        display: block;
+        line-height: 40px;
+      }
+      .gnb .lnb li a {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .gnb > li > a:hover {
+        background: #ddd;
+      }
+      .gnb1 {
+        clear: both;
+        /* overflow: hidden; */
+      }
+      .gnb1 > li {
+        float: left;
+        background: beige;
+        position: relative;
+      }
+      .gnb1 > li > a {
+        display: block;
+        padding: 0 20px;
+        line-height: 40px;
+      }
+      .gnb1 > li > a:hover {
+        background: pink;
+      }
+      .gnb .lnb {
+        width: 100%;
+      }
+      .gnb1 .lnb li a {
+        padding: 0 20px;
+        line-height: 30px;
+        white-space: nowrap;
+      }
+      .lnb {
+        position: absolute; /* 메뉴랑 함께 따라다니게 해야하므로 absolute를 주고 부모에 기준을 줘야하므로 부모에 포지션값 relative줘야함 */
+        left: 0;
+        top: 40px;
+        z-index: 10; /*  메뉴를 제일 위로 올라오게 하기 위해서 쓰는 z-index는 포지션 값이 꼭 같이 있어야한다. */
+        background: aqua;
+        display: none;
+      }
+      .gnb > li:hover .lnb,
+      .gnb1 > li:hover .lnb {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="gnb">
+      <!--global navigation bar-->
+      <li>
+        <a href="#">menu1menu2menu3</a>
+        <ul class="lnb">
+          <!--local navigation bar-->
+          <li>
+            <a href="#">sub menu111111111111111111111111111111111111111</a>
+          </li>
+          <li><a href="#">sub menu2</a></li>
+          <li><a href="#">sub menu3</a></li>
+          <li><a href="#">sub menu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+    <ul class="gnb1">
+      <!--global navigation bar-->
+      <li>
+        <a href="#">menu1menu2menu3555555</a>
+        <ul class="lnb">
+          <!--local navigation bar-->
+          <li>
+            <a href="#"
+              >서브메뉴서브메뉴서브메뉴서브메뉴서브메뉴서브메뉴서브메뉴서브메뉴</a
+            >
+          </li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+  </body>
+</html>

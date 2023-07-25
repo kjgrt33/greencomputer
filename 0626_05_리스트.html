@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리스트 태그</title>
+  </head>
+  <style>
+    /* *는 모든 선택자 - margin/padding 0을 기본 셋팅하는게 좋다 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* > 자식 선택자 */
+    body > ul {
+      list-style: upper-roman;
+    }
+    body > ul > li > ul {
+      list-style: disc;
+    }
+    ul li {
+      border: 1px solid #000;
+    }
+
+    /* + 선택한 요소의 바로 다음에 나오는 인접 선택자 */
+    /* ul.second .list + li { 
+      color: #f00;
+    }*/
+
+    /* ~ 형제 선택자(형제 선택자로 지정했으므로 type 선택자가 아님, 그래서 클래스 값보다 우선순위가 높다!) */
+    ul.second .list ~ li {
+      color: #f00;
+    }
+
+    .list2 {
+      color: #0f0 !important;
+    }
+
+    ul,
+    p {
+      background-color: beige;
+    }
+
+    p {
+      /* margin: 10px 20px 30px 40px; 상 우 하 좌 */
+      /* margin-top: 10px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      margin-left: 40px; */
+      /* margin: 10px 20px 30px; 상 좌우 하 */
+      margin: 10px 20px; /* 상하 좌우 */
+      padding: 50px;
+    }
+
+    dd {
+      margin: 0 0 0 50px;
+    }
+  </style>
+  <body>
+    <ul>
+      <li>
+        <ul>
+          <li>리스트1</li>
+          <li>리스트2</li>
+          <li>리스트3</li>
+          <li>리스트4</li>
+        </ul>
+      </li>
+      <li>
+        <ul class="second">
+          <li class="list">리스트1</li>
+          <li class="list2">리스트2</li>
+          <li>리스트3</li>
+          <li>리스트4</li>
+        </ul>
+      </li>
+    </ul>
+    <p>문단 태그</p>
+
+    <dl>
+      <dt>Coffee</dt>
+      <dd>black hot drink</dd>
+      <dd>black ice drink</dd>
+      <dt>milk</dt>
+      <dd>white cold drink</dd>
+    </dl>
+  </body>
+</html>

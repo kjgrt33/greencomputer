@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소 선택자</title>
+    <style>
+      /* 구조상 부모 body의 첫번째 자식은 h1이기 때문에 위에 p의 첫번째는 스타일이 먹히지 않음 */
+      p:first-child {
+        color: yellow;
+      }
+
+      /* first-of-type은 p타입의 첫번째 */
+      p:first-of-type {
+        background: #ccc;
+      }
+
+      /* 구조상 Live Server로 부모 body안에 마지막 자식이 script가 먹혀서 스타일이 먹히지 않음, 
+      ul li p구조에는 li가 부모이므로 마지막 자식인 p에는 스타일이 먹힘 */
+      p:last-child {
+        color: #aaa;
+      }
+
+      p:last-of-type {
+        background: #0f0;
+      }
+
+      /* 부모기준으로 3째이므로 p에서 3번째줄이 아닌 body에서 3번째이므로 순서상 h1,p,p가 셋째 */
+      p:nth-child(3) {
+        color: #f00;
+      }
+
+      p:first-letter {
+        font-size: 40px;
+      }
+
+      p:first-line {
+        text-decoration: underline;
+      }
+
+      /* ::두개 들어가도 상관 없고 : 한개 들어가도 상관 없다 */
+      h1::before {
+        content: "가상요소앞"; /* 문자가 들어가므로 ""를 넣어야함 */
+        color: #f00;
+      }
+      h1:after {
+        content: "가상요소뒤"; /* 문자가 들어가므로 ""를 넣어야함 */
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제목태그</h1>
+    <p>첫째</p>
+    <p>둘째</p>
+    <p>셋째</p>
+    <p>넷째</p>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+    <ul>
+      <li>
+        <p>문단태그</p>
+        <p>문단태그</p>
+        <p>문단태그</p>
+        <p>문단태그</p>
+        <p>문단태그</p>
+      </li>
+    </ul>
+  </body>
+</html>

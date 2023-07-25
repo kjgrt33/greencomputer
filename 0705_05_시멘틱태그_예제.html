@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gradient</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      .header {
+        overflow: hidden;
+      }
+      .logo,
+      nav {
+        height: 100px;
+        float: left;
+      }
+      .logo {
+        width: 200px;
+        background: #ccc;
+      }
+      nav {
+        width: 1000px;
+        background: #eee;
+      }
+      .imgslide {
+        width: 100%;
+        height: 300px;
+        background: #bbb;
+      }
+      .content {
+        overflow: hidden;
+      }
+      .notice,
+      .banner,
+      .banner2 {
+        float: left;
+        width: 33.33%;
+        height: 200px;
+      }
+      .notice {
+        background: beige;
+      }
+      .banner {
+        background: pink;
+      }
+      .banner2 {
+        background: plum;
+      }
+      .footer {
+        clear: both;
+      }
+      .f_logo,
+      .copyright,
+      .sns {
+        float: left;
+        height: 100px;
+      }
+      .f_logo {
+        background: palevioletred;
+        width: 200px;
+      }
+      .copyright {
+        background: paleturquoise;
+        width: 800px;
+      }
+      .sns {
+        background: palegoldenrod;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="hearder">
+        <span class="logo">로고</span>
+        <nav>메뉴</nav>
+      </div>
+      <div class="imgslide">이미지슬라이드</div>
+      <div class="content">
+        <div class="notice">공지사항/갤러리</div>
+        <div class="banner">배너</div>
+        <div class="banner2">바로가기</div>
+      </div>
+      <div class="footer">
+        <span class="f_logo">로고</span>
+        <span class="copyright">copyright</span>
+        <span class="sns">sns</span>
+      </div>
+    </div>
+  </body>
+</html>

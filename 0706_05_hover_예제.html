@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:hover 속성</title>
+    <style>
+      .over {
+        text-decoration: underline;
+        text-decoration-color: #bbb;
+        text-underline-offset: 5px;
+        cursor: pointer;
+        display: inline-block; /* p태그가 블록요소라 100%로 잡아먹기때문에 옆에 빈공간에도 마우스 올리면 hover되서 그영역안에만 잡기위해 display:inline-block;를 추가한다 */
+      }
+      .over_me {
+        position: relative;
+        top: -25px;
+        width: 100px;
+        padding: 10px;
+        background: #000;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        display: none;
+      }
+      .over:hover ~ p {
+        /* ~ 형제 선택자, + 인접 선택자 다 된다. */
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="over">Mouse over me</p>
+    <p class="over_me">Tooltip text</p>
+  </body>
+</html>

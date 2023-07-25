@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폰트어썸 아이콘 문자(Unicode 방식-가상선택자)</title>
+    <style>
+      @font-face {
+        font-family: solid;
+        src: url(webfonts/fa-solid-900.woff2) format(woff2);
+      }
+      h1 {
+        font-family: solid;
+      }
+
+      h1::before {
+        content: "\f0c6";
+        font-family: solid;
+      } /* 가상선택자로 폰트어썸을 불러오는 방법 */
+    </style>
+  </head>
+  <body>
+    <h1>&#xf015;</h1>
+    <h1></h1>
+  </body>
+</html>

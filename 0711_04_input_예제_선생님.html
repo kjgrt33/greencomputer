@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 태그 - input</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    .title {
+      width: 500px;
+    }
+    label {
+      display: block; /*float: left; 줄꺼면 display:block 안줘도됨*/
+      float: left;
+      width: 33.333%;
+      height: 40px;
+      background: #9cc;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    label:hover,
+    #one:checked ~ p label:first-child,
+    #two:checked ~ p label:nth-child(2),
+    #three:checked ~ p label:nth-child(3) {
+      background: rgb(60, 148, 148);
+    }
+    img {
+      width: 500px;
+      display: none;
+    }
+    #one:checked ~ p img:first-child {
+      display: block;
+    }
+    #two:checked ~ p img:nth-child(2) {
+      display: block;
+    }
+    #three:checked ~ p img:nth-child(3) {
+      display: block;
+    }
+  </style>
+  <body>
+    <!-- id이름이랑 for이름을 동일하게 해야 글씨만 체크해도 선택되고 해제됨 -->
+    <input type="radio" name="photo" id="one" checked />
+    <input type="radio" name="photo" id="two" />
+    <input type="radio" name="photo" id="three" />
+    <p>
+      <img src="images/photo1.jpg" alt="photo1" />
+      <img src="images/photo2.jpg" alt="photo2" />
+      <img src="images/photo3.jpg" alt="photo3" />
+    </p>
+    <p class="title">
+      <label for="one">photo1</label>
+      <label for="two">photo2</label>
+      <label for="three">photo3</label>
+    </p>
+  </body>
+</html>

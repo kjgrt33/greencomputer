@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 수평 가운데 정렬
+        inline 속성개체를 가운데 정렬하고 싶을 때 부모요소에 text-align: center; 줘야함. 그안에 문자나 이미지가 부모기준으로 가운데로 감(학생한테 운동장에서 가운데로 가라)
+        block 속성개체는 margin: 0 auto;
+
+        수직 가운데 정렬
+        inline 속성개체는 vertical-align: middle;
+
+        block 속성 하위요소가 한줄의 text는 line-height: 높이값;
+        하위요소가 이미지인 경우는 line-height: 높이값; , 해당이미지의 vertical-align: middle;도 같이 줘야 정렬이 된다.
+
+        block 속성 하위요소가 두줄이상 일때는 line-height: 높이값이 x
+        display: table-cell;, vertical-align: middle;을 주면 정렬이 된다.
+        
+        block 속성 하위요소가 block 속성이면 부모를 display: table-cell;, vertical-align: middle;으로 줘야하고 클릭시 보여야할  #popup:target target된 속성에 display:table로 해야하고 하위요소에 너비, 높이값이 있어야한다.
+        -> 상위요소 display:table, 하위요소 display:table-cell, vertical-align:middle;, 그다음 하위요소 가로랑 세로크기 지정. ex) 모달창 팝업 */
+      p {
+        height: 300px;
+        line-height: 300px;
+        border: 1px solid #000;
+      }
+      span,
+      span img {
+        vertical-align: middle;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        /* line-height: 300px; */
+        /* padding-top: 100px; */
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span>이미지</span>
+      <span><img src="images/menu1.jpg" alt="menu1" /></span>
+    </p>
+    <div>수직<br />가운데<br />정렬</div>
+  </body>
+</html>

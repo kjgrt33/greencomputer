@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우리 카드</title>
+    <style>
+      .clearfix::before,
+      .clearfix::after {
+        content: "";
+        display: block;
+      }
+      .clearfix::after {
+        clear: both;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      @font-face {
+        font-family: 나눔스퀘어라운드, arial, sans-serif;
+        src: url(webfonts/NanumSquareRoundR.ttf);
+      }
+      body {
+        font-family: 나눔스퀘어라운드, arial, sans-serif;
+      }
+      .service {
+        width: 1080px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+      .service ul {
+        width: 1080px;
+        overflow: hidden;
+      }
+      .service ul li {
+        float: left;
+        width: 23%;
+        height: 100%;
+        margin-right: calc((100% - (23% * 4)) / 3);
+        cursor: pointer;
+      }
+      .service ul li:last-child {
+        margin-right: 0;
+      }
+      .service .photo1 {
+        width: 192px;
+        height: 256px;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+      .service .photo1 img {
+        transition: 1s;
+      }
+      .service .photo2 {
+        position: relative;
+      }
+      .service .photo2 img:first-child,
+      .service .photo2 img:nth-child(2) {
+        position: absolute;
+        right: -30px;
+        bottom: -30px;
+      }
+      .service .des {
+        width: 192px;
+        margin: 50px 0;
+        text-align: center;
+      }
+      .service .des h2 {
+        letter-spacing: -1px;
+        font-size: 22px;
+      }
+      .service .des h2 span {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .service .des p {
+        margin-top: 25px;
+        font-size: 16px;
+        line-height: 27px;
+      }
+      .service ul li:hover .photo1 img {
+        transform: scale(1.2);
+      }
+      .benefit {
+        width: 1080px;
+        margin: 0 auto;
+      }
+      .benefit ul {
+        width: 100%;
+      }
+      .benefit ul li {
+        float: left;
+        position: relative;
+        width: 23%;
+        margin-right: calc((100% - (23% * 4)) / 3);
+        cursor: pointer;
+        text-align: center;
+      }
+      .benefit ul li img {
+        transition: 0.5s;
+      }
+      .benefit ul li:last-child {
+        margin-right: 0;
+      }
+      .benefit ul li:first-child img {
+        transform: scale(0.9);
+      }
+      .benefit ul li::after {
+        display: inline-block;
+        position: absolute;
+        top: 120px;
+        left: -20px;
+        content: "";
+        width: 1px;
+        height: 150px;
+        background: rgb(197, 197, 197);
+      }
+      .benefit ul li:nth-child(2):after {
+        left: 7px;
+      }
+      .benefit ul li:first-child:after {
+        content: "";
+        width: 0;
+        height: 0;
+      }
+      .benefit ul li:hover img {
+        transform: rotatey(180deg);
+      }
+      .benefit .des {
+        text-align: center;
+      }
+      .benefit .des h2 {
+        letter-spacing: -1px;
+        font-size: 22px;
+      }
+      .benefit .des p {
+        margin-top: 25px;
+        font-size: 16px;
+        line-height: 23px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="service">
+      <ul class="clearfix">
+        <li>
+          <div class="photo1">
+            <img src="images/special_mlon_1_bg.png" alt="" />
+          </div>
+          <div class="photo2">
+            <img src="images/special_mlon_1_obj.png" alt="" />
+            <img src="images/special_mlon_1_shd.png" alt="" />
+          </div>
+          <div class="des">
+            <h2>단기카드대출<br /><span>(현금서비스)</span></h2>
+            <p>
+              현금이 급할 때 바로<br />찾아쓰는,<br />편리한 생활자금 마련방법
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="photo1">
+            <img src="images/special_mlon_2_bg.png" alt="" />
+          </div>
+          <div class="photo2">
+            <img src="images/special_mlon_2_obj.png" alt="" />
+            <img src="images/special_mlon_2_shd.png" alt="" />
+          </div>
+          <div class="des">
+            <h2>장기카드대출<br /><span>(카드론)</span></h2>
+            <p>목돈이 필요할 때<br />복잡한 심사 과정 없이<br />간편하게</p>
+          </div>
+        </li>
+        <li>
+          <div class="photo1">
+            <img src="images/special_mlon_3_bg.png" alt="" />
+          </div>
+          <div class="photo2">
+            <img src="images/special_mlon_3_obj.png" alt="" />
+            <img src="images/special_mlon_3_shd.png" alt="" />
+          </div>
+          <div class="des">
+            <h2>일부결제금액이월약정<br /><span>(리볼빙)</span></h2>
+            <p>원하는 만큼만 결제하고 매월<br />결제금액을 계획적으로 관리</p>
+          </div>
+        </li>
+        <li>
+          <div class="photo1">
+            <img src="images/special_mlon_4_bg.png" alt="" />
+          </div>
+          <div class="photo2">
+            <img src="images/special_mlon_4_obj.png" alt="" />
+            <img src="images/special_mlon_4_shd.png" alt="" />
+          </div>
+          <div class="des">
+            <h2>올인원대출<br /><span>(신용대출)</span></h2>
+            <p>우리카드가 없어도 서류없이,<br />방문없이, 내 신용만으로</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="benefit">
+      <ul class="clearfix">
+        <li>
+          <img src="images/benefit1.png" alt="" />
+          <div class="des">
+            <h2>해외이용의 정석</h2>
+            <p>여행, 직구, 항공<br />무엇이든 우리카드로</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/benefit2.png" alt="" />
+          <div class="des">
+            <h2>MY Pick 서비스</h2>
+            <p>혜택도 맞춤!<br />나만을 위한 맞춤 혜택</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/benefit3.png" alt="" />
+          <div class="des">
+            <h2>우리V클럽</h2>
+            <p>특별함을 원하는<br />고객을 위한 VIP우대 혜택</p>
+          </div>
+        </li>
+        <li>
+          <img src="images/benefit4.png" alt="" />
+          <div class="des">
+            <h2>우리 Point</h2>
+            <p>차곡차곡 쌓아<br />다양한 곳에서 사용가능</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        /* position: relative;
+        left: 0; */
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+        animation-name: bg;
+        animation-duration: 2s; /* 완료하는 데 걸리는 시간 */
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        /* animation-delay: -1s; */ /* 몇초 기다렸다가 시작하는지 */
+        animation-iteration-count: 2; /* 몇번 반복 할껀지. infinite는 무한대 */
+        animation-direction: alternate; /* alternate는 왕복 */
+      }
+      /* from 빼고 to만 넣어도된다. 그럼 시작은 원래 div의 애니메이션 속성이 시작 */
+      @keyframes bg {
+        /* from {
+          left: 100px;
+          background: red;
+        }
+        to {
+          left: 200px;
+          background: green;
+        } */
+        0% {
+          /* left: 100px; */
+          transform: translateX(100px);
+          background: red;
+        }
+        50% {
+          transform: translateX(200px);
+          background: yellow;
+        }
+        100% {
+          /* left: 200px; */
+          background: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 100%;
+        max-width: 1280px; /* 1280px이상 안커지게 할거야. 1280보다 작아지면 부모의 100%로 다 쓰게 할꺼야. 대신 스크롤이 안생김 */
+        overflow: hidden; /* 자식에 float 속성 주면 부모는 높이값을 상실해서 높이값을 지정해주거나 overflow:hidden;을 줘야함 */
+        margin: 0 auto;
+        background: #ccc;
+        text-align: center;
+      }
+      .parent > div {
+        float: left;
+      }
+      .child {
+        width: 25%;
+        background: #000;
+        color: #fff;
+        text-align: left;
+      }
+      .left {
+        float: left; /* left에만 float:left;에만 줬는데 right도 같이 올라감. float준 개체의 다음 요소가 자석처럼 끌려 올라감. 그래서 다음 요소에 clear 속성을 지정해줘야함 */
+      }
+      .wrap .right {
+        clear: left; /* float:left;속성을 따라가는 것을 끊어주는 역할 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <!-- 부모요소 -->
+      <div class="child">자식요소</div>
+      <div class="child">자식요소</div>
+      <div class="child">자식요소</div>
+      <p class="child">자식요소</p>
+    </div>
+    <div class="wrap">
+      <div class="left">left</div>
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>

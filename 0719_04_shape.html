@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      input {
+        display: none;
+      }
+      .banner {
+        text-align: center;
+      }
+      p {
+        /* 삼각형 모양 만들때 */
+        margin: 50px auto; /* width가 0이여도 가운데 정렬 margin:0 auto;하면 가운데로 감 */
+        width: 0;
+        height: 0;
+        border-right: 0;
+        border-left: 10px solid #000;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        animation: move 0.5s linear alternate infinite;
+      }
+      label {
+        display: inline-block;
+        border: 1px solid #000;
+        border-radius: 50px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #start:checked ~ label:first-of-type,
+      #stop:checked ~ label:last-of-type {
+        background: #000;
+        color: #fff;
+      }
+      #stop:checked ~ p {
+        animation-play-state: paused;
+      }
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <input type="radio" name="btn" id="start" checked />
+      <input type="radio" name="btn" id="stop" />
+      <p></p>
+      <label for="start">start</label>
+      <label for="stop">stop</label>
+    </div>
+  </body>
+</html>

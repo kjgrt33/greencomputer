@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      svg {
+        border: 1px solid #000;
+        /* svg 기본 default값이 130px * 150px/ */
+        width: 500px;
+        height: 500px;
+      }
+      svg:hover {
+        stroke: #000;
+        stroke-width: 10px;
+        stroke-linecap: square;
+        stroke-dasharray: 800; /*  */
+        stroke-dashoffset: 0;
+        animation: ani 1s forwards; /* forwards는 한번만 가라 */
+        /* transform: rotate(-90deg); */
+      }
+      @keyframes ani {
+        0% {
+          stroke-dashoffset: 800;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <rect x="10" y="10" width="200" height="200" fill="none" />
+    </svg>
+  </body>
+</html>

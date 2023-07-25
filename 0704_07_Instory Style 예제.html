@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instory Style 예제</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, "맑은 고딕", sans-serif;
+      }
+      #wrap {
+        width: 100%; /*이 상태임. body가 어차피 100%이므로 이건 안써도됨 */
+        background: #d3232a;
+      }
+      .top {
+        height: 23px;
+        background: #d3232a;
+        text-align: right;
+      }
+      .head {
+        height: 82px; /* 조금 여백이 보이면 제일 먼저 확인할 것은 높이*/
+        background-image: url(images/pattern.gif);
+      }
+      .inner {
+        width: 1000px;
+        margin: 0 auto;
+      }
+      .contents {
+        width: 1000px;
+        height: 625px; /* 조금 여백이 보이면 제일 먼저 확인할 것은 높이. 그래도 안먹히면
+        font-size:0; 주면 여백 사라짐*/
+        font-size: 0;
+        margin: 0 auto;
+      }
+      .contents > div {
+        float: left;
+      }
+      .right {
+        width: 514px;
+        height: 625px;
+        background: url(images/index_main_02.gif);
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .foot {
+        clear: both;
+        height: 100px;
+        line-height: 100px;
+        background: #fff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="top">
+        <div class="inner">
+          <img src="images/index_top.gif" alt="index_top" />
+        </div>
+      </div>
+      <div class="head">
+        <div class="inner">
+          <img src="images/index_pattern.gif" alt="index_pattern" />
+        </div>
+      </div>
+      <div class="contents">
+        <div class="left">
+          <img src="images/index_main_01.gif" alt="index_main_01" />
+        </div>
+        <div class="right">Home 메인페이지입니다.</div>
+      </div>
+      <div class="foot">
+        <div class="inner">
+          <img src="images/copyright.gif" alt="copyright" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

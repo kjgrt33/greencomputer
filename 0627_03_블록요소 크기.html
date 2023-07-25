@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        background: #ccc;
+        width: 500px; /* paddong과 border값 때문에 실제는 620px이 됨 */
+        padding: 50px; /* width값을 지정하지 않으면 width:auto; 가 default인데 border, padding값은 크기에 포함이 됨 */
+        border: 10px solid #000;
+      }
+
+      ul {
+        width: 500px;
+        background: #f00;
+      }
+
+      li {
+        width: 50%;
+        padding: 50px;
+        background: #0f0;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <p>문단 태그</p>
+    <ul>
+      <li>리스트</li>
+    </ul>
+  </body>
+</html>

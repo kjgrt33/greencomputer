@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>햄버거 메뉴</title>
+    <style>
+      label {
+        cursor: pointer;
+      }
+      label span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background: #000;
+        margin: 6px 0;
+        transition: transform 0.5s ease-in;
+      }
+      .bar1 {
+        /* height:5px + margin:6px = 11px; */
+        transform: translate(0, 11px) rotate(45deg);
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        transform: translate(0, -11px) rotate(-45deg);
+      }
+      #menu:checked ~ .menu01 .bar1,
+      #menu:checked ~ .menu01 .bar3 {
+        transform: translate(0, 0) rotate(0);
+      }
+      #menu:checked ~ .menu01 .bar2 {
+        opacity: 1;
+      }
+      .box {
+        width: 300px;
+        height: 1000px;
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transform: translate(-300px, 0);
+        transition: transform 0.5s ease-in;
+      }
+      #menu:checked ~ .box {
+        transform: translate(0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="menu01">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+    <div class="box"></div>
+  </body>
+</html>

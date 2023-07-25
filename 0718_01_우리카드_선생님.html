@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clearfix::before,
+      .clearfix::after {
+        content: "";
+        display: block;
+      }
+      .clearfix::after {
+        clear: both;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .quickmenu {
+        width: 1080px;
+        margin: 0 auto;
+      }
+      .quickmenu li {
+        position: relative;
+        width: 25%;
+        float: left;
+        text-align: center;
+      }
+      .quickmenu li > a {
+        display: block;
+      }
+      .quickmenu li .special {
+        width: 100%;
+        height: 247px;
+      }
+      .quickmenu li .special img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .quickmenu li::after {
+        content: "";
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 1px;
+        height: 200px;
+        background: #ccc;
+      }
+      .quickmenu li:last-child:after {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="quickmenu clearfix">
+      <li>
+        <!-- a는 인라인이여서 다음에 block요소를 감쌀 수 없다. 문법상 바람직한 방법은 아니지만 그치만 전체를 a링크로 하기위해 a로 감싸고 a자체를 block처리로 해야한다.(block이 block을 감싸게)  -->
+        <a href="#">
+          <div class="special">
+            <img src="images/benefit1.png" alt="benefit1" />
+          </div>
+          <div class="desc">
+            <p>해외이용의 정석</p>
+            <p>여행, 직구, 항공<br />무엇이든 우리카드로</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <img src="images/benefit2.png" alt="benefit2" />
+        <div class="desc">
+          <p>MY Pick 서비스</p>
+          <p>혜택도 맞춤!<br />나만을 위한 맞춤 혜택</p>
+        </div>
+      </li>
+      <li>
+        <img src="images/benefit3.png" alt="benefit3" />
+        <div class="desc">
+          <p>우리V클럽</p>
+          <p>특별함을 원하는<br />고객을 위한 VIP우대 혜택</p>
+        </div>
+      </li>
+      <li>
+        <img src="images/benefit4.png" alt="benefit4" />
+        <div class="desc">
+          <p>우리 Point</p>
+          <p>차곡차곡 쌓아<br />다양한 곳에서 사용가능</p>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

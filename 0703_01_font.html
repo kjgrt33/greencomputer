@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, "나눔고딕", Dotum, sans-serif;
+      }
+      p {
+        letter-spacing: 10px; /* 자간 - 수치가 작으면 글자사이의 간격이 좁아진다 */
+        word-spacing: 20px; /* 단어와 단어사이의 간격 */
+        text-decoration: line-through; /* line-through는 취소선 */
+        text-transform: capitalize; /* capitalize는 단어의 첫글자만 대문자 */
+        text-align: center;
+        height: 50px;
+        border: 1px solid #000;
+        /* vertical-align: middle; 블록요소는 vertical-align은 안먹음 */
+      }
+      div {
+        width: 100px;
+        border: 1px solid #000;
+        vertical-align: middle;
+        display: inline-block;
+        text-indent: 10px; /* text-indent는 들여쓰기 */
+      }
+      .one {
+        height: 100px;
+        line-height: 100px; /* line-height는 행간이기 때문에 텍스트 내용이 두줄일 경우 그 사이가 떨어짐 */
+      }
+      .two {
+        height: 50px;
+        line-height: 50px;
+        text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5); /* 가로 세로 블러 rgb색상 a투명도 - a는 알파값 1이면 진함 */
+      }
+      .justify {
+        width: 500px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <p>green computer academy</p>
+    <p>그린 컴퓨터 아카데미</p>
+    <span>green computer academy</span><br />
+    <span>그린 컴퓨터 아카데미</span>
+    <div class="one">one<br />one</div>
+    <div class="two">two</div>
+
+    <div class="justify">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </div>
+    <div class="justify">
+      법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는
+      바에 의하여 퇴직하게 할 수 있다. 선거에 있어서 최고득표자가 2인 이상인
+      때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를
+      당선자로 한다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은
+      대법원장이 지명하는 자를 임명한다. 제안된 헌법개정안은 대통령이 20일
+      이상의 기간 이를 공고하여야 한다.
+    </div>
+  </body>
+</html>

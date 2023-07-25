@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clearfix::before,
+      .clearfix::after {
+        content: "";
+        display: block;
+      }
+      .clearfix::after {
+        clear: both;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        font-family: Arial, "맑은 고딕", sans-serif;
+      }
+      #wrap {
+        width: 100%;
+        margin: 20px auto;
+      }
+      #wrap .title {
+        text-align: center;
+      }
+      header {
+        position: relative;
+        width: 1001px;
+        height: 360px;
+        margin: 30px auto 0;
+      }
+      nav {
+        width: 1001px;
+        height: 70px;
+        background: url(images/bg.gif);
+      }
+      /* 이게 keypoint!!!! */
+      nav ul {
+        position: absolute;
+        z-index: 1;
+      }
+      nav ul li {
+        float: left;
+        line-height: 70px;
+        text-align: center;
+      }
+      nav ul li a {
+        display: inline-block;
+        color: #fff;
+        width: 100px;
+        padding: 0 10px;
+      }
+      nav ul li a:hover,
+      nav ul li:first-child a {
+        background: red;
+      }
+      .visual {
+        width: 1001px;
+        height: 360px;
+        background: url(images/bg2.gif);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .content {
+        width: 1001px;
+        margin: 30px auto;
+        letter-spacing: -1px;
+      }
+      .content .left {
+        float: left;
+        width: 65%;
+      }
+      .content .left .growth1 {
+        margin-bottom: 50px;
+      }
+      .content .left h3 {
+        color: #003466;
+        margin: 20px 0 10px;
+      }
+      .content .left p {
+        line-height: 25px;
+      }
+      .content .left p.btn {
+        text-align: right;
+      }
+      .content .left p.btn a {
+        display: inline-block;
+        width: 80px;
+        padding: 5px 8px;
+        background: #003466;
+        border-radius: 20px;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+      }
+      .content .left p.btn a:hover {
+        background: #0f4475;
+      }
+      .content .right {
+        float: right;
+        width: 30%;
+        margin-left: 5%;
+      }
+      .content .right h3 {
+        color: #003466;
+        margin-bottom: 10px;
+        letter-spacing: 0;
+        font-size: 23px;
+      }
+      .content .right li {
+        margin-bottom: 5px;
+      }
+      .content .right a {
+        color: #333;
+        font-size: 15px;
+      }
+      .content .right a:hover {
+        color: #003466;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      .content .right .clinic {
+        margin-bottom: 20px;
+      }
+      footer {
+        background: #eee;
+        text-align: center;
+        padding: 20px 0;
+        color: rgb(107, 107, 107);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h2 class="title">The Growth Clinic Story</h2>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#">Information</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Clinic Test</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="visual"><img src="images/bg_main.png" alt="bg_main" /></div>
+      </header>
+      <div class="content clearfix">
+        <div class="left">
+          <h2>Food Story For Growth</h2>
+          <div class="growth1">
+            <h3>해독 기능이 뛰어난 여름철 수박 껍질 차</h3>
+            <p>
+              수박 껍질 차는 아무리 먹어도 살이 찌지 않기 때문에 한여름의 갈증을
+              없애고 스트레스로 갑갑증을 풀어주며 무더위를 날려 주는 데는 최고의
+              식품이다. 수박 껍질 속의 시트룰린 성분은 간에서 효소의 생성을
+              촉진하므로 과잉 생성된 성호르몬의 분해에 도움이 되며, 혈압을
+              낮추는 효과가 있다. 특히 수박 껍질차는 급성만성 신장염에 효과가
+              있으며 시트룰린이 많아 소변도 잘 나오게 한다.
+            </p>
+            <p class="btn"><a href="#"> More Read</a></p>
+          </div>
+          <div class="growth2">
+            <h3>천식에는 오미자차</h3>
+            <p>
+              오미자는 음혈이 허약하고 부족하며 심신이 불안하여 유발된 불면증
+              치료에 좋은 효과가 있으며, 각종 알레르기 증세로 인해 숙면을 취하지
+              못하는 경우에도 많이 응용되고 있다.
+            </p>
+            <p class="btn"><a href="#"> More Read</a></p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="clinic">
+            <h3>Clinic Category</h3>
+            <ul>
+              <li><a href="#">자가진단</a></li>
+              <li><a href="#">성장 장애</a></li>
+              <li><a href="#">발육 표준치</a></li>
+              <li><a href="#">성장 상식</a></li>
+              <li><a href="#">예상키 검사</a></li>
+              <li><a href="#">비만도 검사</a></li>
+              <li><a href="#">키크는 식품</a></li>
+              <li><a href="#">음식 백과</a></li>
+              <li><a href="#">성장 장애 예방법</a></li>
+              <li><a href="#">성장 장애 FAQ</a></li>
+              <li><a href="#">상담실</a></li>
+            </ul>
+          </div>
+          <div class="clinic">
+            <h3>Link Site</h3>
+            <ul>
+              <li><a href="#">보건 복지부</a></li>
+              <li><a href="#">의료 보험 공단</a></li>
+              <li><a href="#">질병 관리 보험 본부</a></li>
+              <li><a href="#">국립 보건 연구원</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>Copyright ⓒ 2012. The Growth Clinic Story. Since 1998.</p>
+      </footer>
+    </div>
+  </body>
+</html>

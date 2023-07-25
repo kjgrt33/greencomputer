@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>블록 인라인 예제</title>
+    <style>
+      p {
+        background: #f00;
+        width: 200px;
+        height: 100px;
+        line-height: 100px; /* 텍스트가 한줄일때 line-height 수직정렬로 height값과 같은 값을 주면 수직정렬이 됨 */
+        /* padding: 20px 0; */
+        margin: 0 auto;
+        text-align: center; /* a태그의 가운데 정렬을 위해 부모요소 p태그가 크기값 기준이 되므로 text-align: center;를 줌 */
+      }
+      a {
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <a href="#">a 태그 : 링크 태그</a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img 태그</title>
+  </head>
+  <body>
+    <!-- figure 태그는 블록태그, figcaption은 figure의 자식요소로 올 수 있다. -->
+    <figure>
+      <img src="images/menu1.jpg" alt="menu1" />
+      <img src="images/menu2.jpg" alt="menu2" />
+      <figcaption>초등학습</figcaption>
+    </figure>
+    <figure>
+      <img src="images/menu2.jpg" alt="menu2" />
+    </figure>
+
+    <!--picture 태그는 source태그를 자식요소로 불러오고 마지막은 img태그를 써야한다. -->
+    <picture>
+      <source media="(min-width:1280px)" srcset="images/photo1.jpg" />
+      <!-- min-width:1280px은 화면크기가 1280px보다 클때는 이 이미지가 나온다-->
+      <source media="(min-width:1024px)" srcset="images/photo2.jpg" />
+      <!-- min-width:1024x은 화면크기가 1024px보다 클때는 이 이미지가 나온다-->
+      <source media="(min-width:768px)" srcset="images/photo3.jpg" />
+      <!-- min-width:768px은 화면크기가 768px보다 클때는 이 이미지가 나온다-->
+      <source media="(min-width:500px)" srcset="images/photo4.jpg" />
+      <!-- min-width:500px은 화면크기가 500px보다 클때는 이 이미지가 나온다-->
+      <img src="images/photo1.jpg" alt="photo1" /><!-- 기본일때-->
+    </picture>
+  </body>
+</html>

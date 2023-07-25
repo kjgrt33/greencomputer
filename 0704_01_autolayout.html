@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Layout & Figma</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, "맑은 고딕", sans-serif;
+        max-width: 1920px;
+      }
+      .col {
+        width: calc(180px * 4 + 60px);
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .col > div {
+        float: left;
+        margin-left: 20px;
+      }
+      .col > div:first-child {
+        margin-left: 0;
+      }
+      .user {
+        width: 180px;
+        height: 180px;
+        /* 직사각형 이미지를 넣고 radius를 주는 방법 */
+        border-radius: 10px;
+        overflow: hidden; /* radius 줬기 때문에 이미지의 넘치는 부분은 안보이게 하기위해  */
+      }
+      .title {
+        width: 180px;
+        height: 35px;
+        background: #fd4f6e;
+        border-radius: 10px;
+        font-size: 20px;
+        color: #fff;
+        margin: 10px 0;
+      }
+      .title p {
+        line-height: 35px; /* 글자랑 이미지 수직정렬 */
+      }
+      .title p:first-child {
+        float: left;
+        margin-left: 20px;
+      }
+      .title p:last-child {
+        float: right;
+        margin-right: 20px;
+      }
+      .title img {
+        vertical-align: middle;
+      }
+      .desc {
+        width: 180px;
+        font-size: 12px;
+        text-indent: 10px;
+        display: -webkit-box; /* 두 줄 이상일 때의 말줄임표 */
+        -webkit-line-clamp: 3; /* 표시할 줄 수 */
+        -webkit-box-orient: vertical; /* 방향은 세로 */
+        overflow: hidden;
+        margin-bottom: 20px;
+        /* line-height: 2; 2=200%*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="col">
+        <div>
+          <p class="user"><img src="images/user.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.svg" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.svg" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.svg" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.svg" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+        <div>
+          <p class="user"><img src="images/user01.jpg" alt="user01" /></p>
+          <div class="title">
+            <p>List Title</p>
+            <p><img src="images/arrow.png" alt="arrow" /></p>
+          </div>
+          <p class="desc">
+            글로도 로렘 글로도 폰트, 실제적인 무언가를 차지하는 들어가는
+            들어가는 용도로 표준 용어로도 프로젝트 문장 무언가를 요소나 그래픽
+            연출을 내용이 텍스트로, 그래픽 글로도 글로도 그리킹이라고도 그래픽
+            모형의 텍스트로, 사용하는 폰트, 용어로도 부르며, 채워지기 채워지기
+            타이포그래피
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

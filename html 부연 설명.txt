@@ -1,0 +1,118 @@
+많은 글자 필요시 홈페이지
+https://lipsum.com/ 
+
+
+<html lang="ko">-> 한국어
+<html lang="en"> -> 영문
+
+<meta charset="UTF-8"> 모든나라의 그 나라 언어로 표현함
+
+1. inline방식
+2. internal방식(내부)
+3. external방식(외부)
+
+인라인 요소는 갖고 있는 값은 있으나 더 큰 값을 못가짐 ex) <span>
+블록 요소는 크기 값을 가짐 ex) <p>
+
+
+*퍼블 코딩 편집기툴*
+- 비주얼스튜디오 코드
+- brackets
+- 서브라임텍스트
+- 에디트플러스(유료)
+- 노트패드++
+
+
+파일명은 웬만하면 특수문자 넣지말기 (_언더바 정도만)
+폰트는 '제목태그4'가 표준 100% 폰트 크기임 -> 16px -> 12pt
+
+<비주얼스튜디오 코드>
+*플러그인(설치 꼭 해야함!!!)*
+- Live Server : 가상서버의 공간을 만들어주고 수정해서 새로고침 안해도 저장만 하면 화면에 바로 수정 반영됨(호스팅 하게되면 주소&서버 갖게됨, 포폴로 쓰기에 유용)
+적용하려면 탐색기 쪽 폴더열고 내 해당파일 폴더를 열고 html 열어서
+본문에 오른쪽 마우스 버튼 클릭 -> open with Live Server
+
+- Code Formatter : 들여쓰기 자동으로 되고 잘못된 규칙 빨간색으로 표시해줌
+
+
+미니맵 안나오게(보기->미니맵 체크 풀기)
+
+실행 -> 디버깅 시작 : 브라우저 선택 후 인터넷 열리며 화면 보여짐(새로고침을 계속 해줘야함, 그래서 라이브 서버를 더 추천함)
+
+<파일명 save 먼저 하고>
+!쓰고 tab : 기본 구조 자동 생성
+html쓰고 아래 html5 선택 : 기본 구조 자동 생성
+
+단축기 바꾸기
+관리->바로가기 키-> 
+- 위아래에 글 복사 : Ctrl+d
+- wrap 씌워주기 : Alt+w
+- 주석 처리하기 : Ctrl+/, 다시 풀려면 또 Ctrl+/
+
+h2*5누르고 탭키 누르면
+h2 구조 5개 아래 생김
+
+h1>h2
+쓰고 엔터누르면
+h1구조랑 h2구조 생김
+
+<pre> 태그는 내가 작업한 그대로 보여짐
+<strong> 태그는 강조하기 위한 성격의 태그(중요성을 인지) / <b> 굵게 처리
+<em> 태그는 강조하기 위한 성격의 태그(중요성을 인지) / <i> 단순히 기울어지게 하게 처리
+
+<blockquote> 태그는 인용태그 사이트 출처를 남겨야할 때
+
+*레이아웃*
+static은 default값이다. 움직이지 않고 정적인 상태
+relative는 그 현재 위치에서 움직이고(상하좌우) 싶을때 쓴다
+absolute는 바디를 기준으로 위치점을 움직이는게 기본이고 부모요소에 relative를 주면 이제 그 부모를 기준으로 위치점을 움직일 수 있다.
+fixed는 바디를 기준으로 위치점을 움직인다
+
+-음의값은 사용자에게 보여지지 않는 화면(위)
++양의값은 사용자에게 보여지는 화면(아래) : 도화지 body안
+
+absolute로 주면 요소들이 다 겹쳐짐
+
+form에 method속성에서 get방식은 보안에 취약함, post방식을 선호
+
+font-family는 영문 폰트체부터 쓰고 ,(쉼표하고) 한글 폰트체로 나열하길 추천
+폰트사이즈는 16px이 기본인데 16p=12pt=1em
+폰트는 woff나 otf를 올리면된다
+
+수평 가운데 정렬
+inline 속성개체는 text-align: center;
+block 속성개체는 margin: 0 auto;
+
+수직 가운데 정렬
+inline 속성개체는 vertical-align: middle;
+
+block 속성 하위요소가 한줄의 text는 line-height: 높이값;
+하위요소가 이미지인 경우는 line-height: 높이값; , 해당이미지의 vertical-align: middle;도 같이 줘야 정렬이 된다.
+
+block 속성 하위요소가 두줄이상 일때는 line-height: 높이값이 x
+display: table-cell;, vertical-align: middle;을 주면 정렬이 된다.
+        
+block 속성 하위요소가 block속성이면 부모를 display: table-cell;으로 바꿔야하고 너비, 높이값이 있어야하며  
+vertical-align: middle;을 주면된다.
+
+<input
+            type="text"
+            placeholder="아이디를 입력해주세요."
+            size="20"
+            maxlength="10"
+            minlength="5"
+            onfocus="this.placeholder=''"
+          />
+onfocus="this.placeholder=''"는 인풋박스에 포커스가 되었을때 '' 
+이안에 공백을 준게 아이디를 입력해주세요.라는 글씨가 없어지라는말
+
+ /* ul에 overflow:hidden;을 줘서 높이값을 찾아주면 속에 내용이 짤린다. 
+        그래서 .clearfix로 부모 높이값을 살려주는 방법 */
+      .clearfix:before,
+      .clearfix::after {
+        content: "";
+        display: block; /* 또는 display:table도 쓸 수 있다 */
+      }
+      .clearfix::after {
+        clear: both;
+      }
