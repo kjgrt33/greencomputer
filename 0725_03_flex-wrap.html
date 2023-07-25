@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      .flex {
+        height: 500px;
+        background: #ccc;
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+      }
+      .flex div {
+        width: 300px;
+        background: pink;
+        border: 1px solid #000;
+      }
+      .container2 {
+        flex-wrap: wrap;
+      }
+      .container3 {
+        flex-wrap: nowrap;
+      }
+      .container4 {
+        flex-wrap: wrap-reverse;
+      }
+      .container5,
+      .container6 {
+        width: 500px;
+      }
+      .container5 {
+        flex-wrap: wrap;
+      }
+      .container6 {
+        flex-flow: row nowrap; /* flex-flow는  flex-direction과 flex-wrap을 한꺼번에 지정할 수 있는 단축 속성 */
+        /* flex-wrap: nowrap; */
+      }
+      .container6 div {
+        flex-shrink: 0; /* flex-shrink는 아이템(자식)에 줘야한다! - 유연하게 줄이기 : 기본값이 1 -> 지금은 유연하게 줄이지 않게 0을 줬기 때문에 넘어감 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <div class="flex container6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

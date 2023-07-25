@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      .float {
+        background: #ccc;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .float div {
+        float: left;
+        background: #f00;
+        border: 1px solid #000;
+      }
+      .flex {
+        clear: left;
+        background: #ccc;
+        padding: 20px;
+      }
+      .container1 {
+        display: flex; /* flex는 부모요소의 크기를 그대로 갖는다. */
+      }
+      .container2 {
+        display: inline-flex; /* inline-flex는 부모의 크기가 없을때 자식 요소 만큼의 크기를 갖는다.*/
+      }
+      .flex div {
+        background: #f00;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float">
+      <div>1<br />2<br />3</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container1">
+      <div>1<br />2<br />3</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="flex container2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>
