@@ -96,18 +96,18 @@
         z-index: 2;
         transition: 0.5s;
       }
-
       nav > ul > li > a > span {
         font-weight: bold;
       }
       ul.sub {
+        width: 990px;
+        height: 0;
+        overflow: hidden;
         position: absolute;
         top: 70px;
         left: 0;
-        height: 0;
         z-index: 1;
-        transition: 0.3s;
-        opacity: 0;
+        transition: height 0.5s;
       }
       ul.sub li {
         margin-bottom: 10px;
@@ -129,8 +129,16 @@
       nav:hover > ul ~ .sub_bg {
         height: 210px;
       }
-      nav > ul:hover > li ul.sub {
-        opacity: 1;
+      .ssub {
+        margin-top: 20px;
+      }
+      .ssub li a {
+        font-size: 14px;
+      }
+      .ssub li a::before {
+        content: url(images/gnb_3depth_bullet.png);
+        background-position: center;
+        margin-right: 4px;
       }
       .visual {
         width: 1600px;
@@ -466,10 +474,14 @@
           <li>
             <a href="#">해피바스 <span>선물</span> </a>
             <ul class="sub">
-              <li><a href="#">행복의 순간</a></li>
-              <li><a href="#">내추럴 성분</a></li>
-              <li><a href="#">풍성한 향</a></li>
-              <li><a href="#">즐거운 경험</a></li>
+              <li>
+                <a href="#">행복의 순간</a>
+                <ul class="ssub">
+                  <li><a href="#">내추럴 성분</a></li>
+                  <li><a href="#">풍성한 향</a></li>
+                  <li><a href="#">즐거운 경험</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li>
