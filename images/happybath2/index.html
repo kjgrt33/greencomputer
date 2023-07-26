@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      body {
+        font-family: Arial, "나눔 고딕", sans-serif;
+      }
+      .top {
+        width: 990px;
+        height: 95px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .top .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .top .util {
+        height: 95px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+      .top .util ul {
+        display: flex;
+      }
+      .top .util ul li {
+        margin-left: 10px;
+      }
+      .top .util ul li a {
+        color: #6f574d;
+      }
+      .top .util ul li a:after {
+        content: url(images/bg-header-side-li.png);
+        margin-left: 10px;
+      }
+      .top .util ul li:last-child a:after {
+        content: "";
+      }
+      .top .util ul li img {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+      }
+      nav {
+        position: relative;
+        border-bottom: 1px solid #d8d0cd;
+        padding-bottom: 20px;
+      }
+      nav > ul {
+        width: 990px;
+        margin: 30px auto 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav > ul > li {
+        position: relative;
+        margin-left: 70px;
+      }
+      nav > ul > li:first-child {
+        margin-left: 0;
+      }
+      nav > ul > li > a {
+        position: relative;
+        display: inline-block;
+        color: #341c17;
+        font-size: 18px;
+        letter-spacing: -1px;
+      }
+      nav > ul > li > a:hover:after,
+      nav > ul > li:hover > a:after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: #341c17;
+        position: absolute;
+        bottom: -21px;
+        left: 0;
+        z-index: 2;
+        transition: 0.5s;
+      }
+
+      nav > ul > li > a > span {
+        font-weight: bold;
+      }
+      ul.sub {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        height: 0;
+        z-index: 1;
+        transition: 0.3s;
+        opacity: 0;
+      }
+      ul.sub li {
+        margin-bottom: 10px;
+      }
+
+      ul.sub li a:hover {
+        text-decoration: underline;
+      }
+      .sub_bg {
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        background: #fff;
+        transition: height 0.5s;
+      }
+      nav > ul:hover > li ul.sub,
+      nav:hover > ul ~ .sub_bg {
+        height: 210px;
+      }
+      nav > ul:hover > li ul.sub {
+        opacity: 1;
+      }
+      .visual {
+        width: 1600px;
+        height: 520px;
+        margin: 0 auto;
+        /* background-size: 100% 520px; */
+        /* background-position: center; */
+        animation-name: image;
+        animation-duration: 7s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes image {
+        0% {
+          background-image: url(images/visual01.jpg);
+        }
+        25% {
+          background-image: url(images/visual02.jpg);
+        }
+        50% {
+          background-image: url(images/visual03.jpg);
+        }
+        100% {
+          background-image: url(images/visual04.jpg);
+        }
+      }
+      section {
+        background: url(images/item-bg.png) no-repeat;
+        background-position: 100% 90%;
+      }
+      section .item {
+        width: 990px;
+        margin: 50px auto;
+        text-align: center;
+      }
+      section .item h2 {
+        position: relative;
+        font-size: 20px;
+        color: #341c17;
+        letter-spacing: -1px;
+      }
+      section .item h2::before {
+        width: 380px;
+        height: 1px;
+        content: "";
+        background: url(images/item-titbg.gif);
+        position: absolute;
+        top: 50%;
+        left: 0;
+      }
+      section .item h2::after {
+        width: 380px;
+        height: 1px;
+        content: "";
+        background: url(images/item-titbg.gif);
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+      .item .box ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      .item .box ul li img {
+        transition: 1s;
+      }
+      .item .box ul li a {
+        letter-spacing: -1px;
+      }
+      .item .box ul li a:hover {
+        font-weight: bold;
+      }
+      .item .box ul li a p {
+        margin-top: 10px;
+      }
+      .item .box ul li:hover img {
+        transform: scale(1.05);
+      }
+      article {
+        width: 990px;
+        margin: 0 auto;
+      }
+      article > div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .review .desc {
+        width: 642px;
+        height: 251px;
+        border: 1px solid #ddd;
+        display: flex;
+        cursor: pointer;
+      }
+      .review .desc:hover {
+        border-color: #000;
+      }
+      .review .desc .pic {
+        width: 100%;
+        height: 251px;
+        background: #e8e2ef;
+      }
+      .review .desc .pic img {
+        vertical-align: middle;
+      }
+      .review .desc .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 30px;
+        box-sizing: border-box;
+        color: #341c17;
+        box-sizing: border-box;
+      }
+      .review .desc .box h3 {
+        font-size: 19px;
+        font-weight: 200;
+      }
+      .review .desc .box .star {
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        box-sizing: border-box;
+      }
+      .review .desc .box .dis {
+        margin-top: 10px;
+      }
+      .news img {
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .news:hover img {
+        border: 1px solid #000;
+      }
+      .review h2,
+      .news h2 {
+        font-size: 20px;
+        color: #341c17;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .happy {
+        width: 990px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-around;
+      }
+      .happy > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 463px;
+        height: 400px;
+      }
+      .left ul {
+        width: 100%;
+        height: 306px;
+        display: flex;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .left ul li {
+        position: relative;
+        flex: 1 1 30%;
+        transition: flex-basis 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        cursor: pointer;
+      }
+      .left ul li.first {
+        background: url(images/sample01.jpg);
+      }
+      .left ul li.second {
+        background: url(images/sample02.jpg);
+      }
+      .left ul li.third {
+        background: url(images/sample03.jpg);
+      }
+      .left .title {
+        text-align: center;
+        line-height: 306px;
+        font-size: 20px;
+        color: #fff;
+      }
+      .left .box {
+        position: absolute;
+        width: 300px;
+        top: 0;
+        left: 0;
+        padding-top: 120px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        opacity: 0;
+      }
+      .left .box a {
+        display: inline-block;
+        margin-top: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 5px 20px;
+        color: #fff;
+      }
+      .left .box a:hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: #333;
+      }
+      .left:hover ul {
+        border: 1px solid #000;
+      }
+      .left ul:hover .title {
+        display: none;
+      }
+      .left ul li:hover .box {
+        opacity: 1;
+      }
+      .left ul:hover li:hover {
+        flex-basis: 60%;
+      }
+      .left ul:hover li:not(:hover) {
+        flex-basis: 20%;
+      }
+
+      .right div {
+        width: 100%;
+        height: 306px;
+        background: url(images/beautytalk.jpg) no-repeat;
+        background-size: 100%;
+        background-position: center;
+        text-align: center;
+        transition: 1s;
+        cursor: pointer;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+      }
+      .right div p {
+        padding-top: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 20px;
+      }
+      .right div a {
+        display: inline-block;
+        margin-top: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 5px 20px;
+        color: #fff;
+      }
+      .right div a:hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: #333;
+      }
+      .right div:hover {
+        background-size: 120%;
+        border: 1px solid #000;
+        box-sizing: border-box;
+      }
+      .sns {
+        height: 58px;
+        background: #f8f8f8;
+      }
+      .sns ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .foot {
+        width: 990px;
+        margin: 20px auto;
+        text-align: center;
+        font-size: 13px;
+      }
+      .foot ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .foot ul li {
+        margin-left: 20px;
+      }
+      .foot ul li a {
+        font-size: 13px;
+      }
+      .foot ul li a::after {
+        content: url(images/bg-sitelnk.png);
+        margin-left: 15px;
+      }
+      .foot ul li:last-child a::after {
+        content: "";
+      }
+      .foot p {
+        margin: 10px 0;
+      }
+      .foot p:nth-child(3) {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="top">
+        <div class="logo">
+          <a href="#"
+            ><img src="images/HAPPY BATH.png" alt="HAPPY BATH logo"
+          /></a>
+        </div>
+        <div class="util">
+          <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">구매하기</a></li>
+            <li><a href="#">매장찾기</a></li>
+            <li>
+              <a href="#"
+                ><img src="images/bg-header-searchbtn.png" alt="searchbtn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">해피바스 <span>이야기</span> </a>
+            <ul class="sub">
+              <li><a href="#">브랜드 히스토리</a></li>
+              <li><a href="#">영상 갤러리</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">해피바스 <span>선물</span> </a>
+            <ul class="sub">
+              <li><a href="#">행복의 순간</a></li>
+              <li><a href="#">내추럴 성분</a></li>
+              <li><a href="#">풍성한 향</a></li>
+              <li><a href="#">즐거운 경험</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">해피바스 <span>뷰티톡</span> </a>
+            <ul class="sub">
+              <li><a href="#">피부고민X뷰티팁</a></li>
+              <li><a href="#">자산화 원료</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">해피바스 <span>제품</span> </a>
+            <ul class="sub">
+              <li><a href="#">유형별 제품</a></li>
+              <li><a href="#">고민별 제품</a></li>
+            </ul>
+            <ul class="sub">
+              <li><a href="#">유형별 제품</a></li>
+              <li><a href="#">고민별 제품</a></li>
+              <li><a href="#">전체 제품 보기</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="sub_bg"></div>
+      </nav>
+
+      <div class="visual"></div>
+      <section>
+        <div class="item">
+          <h2>베스트셀러 아이템</h2>
+          <div class="box">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="images/item01.png" alt="item01" />
+                  <p>해피바스 마이크로미셀라<br />딥 클렌징 폼</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/item02.png" alt="item02" />
+                  <p>해피바스 오리지널컬렉션<br />오리지널 바디워시</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/item03.png" alt="item03" />
+                  <p>해피바스 오리지널컬렉션<br />베이비파우더 바디워시</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/item04.png" alt="item04" />
+                  <p>해피바스 오리지널컬렉션<br />솝 라벤더 바디워시</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <article>
+        <div class="a_box">
+          <div class="review">
+            <h2>제품 리뷰</h2>
+            <div class="desc">
+              <div class="pic">
+                <img src="images/review01.png" alt="review01" />
+              </div>
+              <div class="box">
+                <h3>[해피바스 마이크로미셀라 딥 클렌징 폼]</h3>
+                <div class="star">
+                  <p>kjgrt*</p>
+                  <p>★★★★★</p>
+                </div>
+                <p class="dis">
+                  항상 마이크로 미셀라 딥 클렌징 폼을 사용하는데 역시 세정력
+                  우수하고 피부가 개운해요 확실히 마무리가 촉촉한 느낌이 있어요!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="news">
+            <div class="desc">
+              <h2>해피바스 소식</h2>
+              <img src="images/news01.jpg" alt="news01" />
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="happy">
+        <div class="left">
+          <h2>해피바스 선물</h2>
+          <ul>
+            <li class="first">
+              <p class="title">내추럴 성분</p>
+              <div class="box">
+                <p>
+                  해피바스가 담고 있는<br />
+                  '내추럴 성분'이 궁금하다면?
+                </p>
+                <a href="#">more</a>
+              </div>
+            </li>
+            <li class="second">
+              <p class="title">풍성한 향</p>
+              <div class="box">
+                <p>
+                  해피바스가에서 펼쳐지는<br />
+                  '풍성한 향'이 궁금하다면?
+                </p>
+                <a href="#">more</a>
+              </div>
+            </li>
+            <li class="third">
+              <p class="title">즐거운 경험</p>
+              <div class="box">
+                <p>
+                  해피바스가 이끄는<br />
+                  '즐거운 경험'이 궁금하다면?
+                </p>
+                <a href="#">more</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <h2>해피바스 뷰티톡</h2>
+          <div>
+            <p>피부고민에 따른 뷰티팁을 드려요.</p>
+            <a href="#">more</a>
+          </div>
+        </div>
+      </div>
+      <div class="sns">
+        <ul>
+          <li>
+            <a href="#"><img src="images/sns01.png" alt="sns01" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/sns02.png" alt="sns02" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/sns03.png" alt="sns03" /></a>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <div class="foot">
+          <ul>
+            <li><a href="#">서비스 이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">영상처리방침</a></li>
+            <li><a href="#">뷰티포인트</a></li>
+            <li><a href="#">사이트맵</a></li>
+          </ul>
+          <p>
+            고객상담팀(수신자 요금 부담) 080-023-5454상담시간 월~금 : AM 09:00 ~
+            PM 06:00
+          </p>
+          <p>© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

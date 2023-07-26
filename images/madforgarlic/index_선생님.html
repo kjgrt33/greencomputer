@@ -85,6 +85,18 @@
         display: flex;
         justify-content: space-between;
       }
+      ul.banner li {
+        width: 235px;
+        height: 227px;
+        box-sizing: border-box;
+        border: 3px dashed transparent;
+      }
+      ul.banner li:hover {
+        border-color: #fc0;
+      }
+      ul.banner li img {
+        width: 100%; /* 이미지 하단부분이 짤리기 때문에 이속성을 넣어줘야함 */
+      }
       .event {
         width: 1000px;
         margin: 0 auto;
@@ -107,6 +119,31 @@
       .event .right span {
         margin-left: 10px;
       }
+      footer {
+        display: flex;
+        align-items: center;
+        height: 150px;
+        border-top: 1px solid #ccc;
+        margin-top: 20px;
+      }
+      footer .foot {
+        width: 1000px;
+        height: 70px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* column이 세로축이므로 수평정렬이 align-items가 된다 */
+        justify-content: space-between; /* column이 세로축이므로 수직정렬이 justify-content가 된다. 대신 높이값이 있어야 기준이되서 정렬이 된다. */
+        color: #fff;
+      }
+      footer .foot ul {
+        display: flex;
+        width: 60%;
+        justify-content: space-between; /* row 가로축이므로 수평정렬이 justify-content가 된다. 대신 너비값이 있어야 기준이되서 정렬이 된다.*/
+      }
+      footer .foot ul li a {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -118,7 +155,11 @@
             <li><a href="#">JOIN</a></li>
             <li><a href="#">GUEST</a></li>
             <li>
-              <input type="search" placeholder="검색어를 입력해주세요" />
+              <input
+                type="search"
+                placeholder="검색어를 입력해주세요"
+                onfocus="this.placeholder=''"
+              />
             </li>
             <li>
               <a href="#"><img src="images/zoom.png" alt="zoom" /></a>
@@ -186,6 +227,19 @@
           </div>
         </div>
       </div>
+      <footer>
+        <div class="foot">
+          <ul>
+            <li><a href="#">서비스이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">기기운영관리방침</a></li>
+            <li><a href="#">고객서비스센터</a></li>
+            <li><a href="#">관리자문의</a></li>
+          </ul>
+          <p>서울특별시 강남구 압구정로 222(신사동) ㈜엠에프지코리아</p>
+          <p>COPYRIGHT ⓒ MFGKOREA ALL RIGHTS RESERVED.</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
