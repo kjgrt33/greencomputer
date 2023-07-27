@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>transition</title>
+    <title>happybath</title>
     <style>
       * {
         margin: 0;
@@ -146,19 +146,20 @@
         margin: 0 auto;
         /* background-size: 100% 520px; */
         /* background-position: center; */
-        animation-name: image;
+        /* animation-name: image;
         animation-duration: 7s;
         animation-iteration-count: infinite;
-        animation-direction: alternate;
+        animation-direction: alternate; */
+        animation: image 4s infinite both;
       }
       @keyframes image {
         0% {
           background-image: url(images/visual01.jpg);
         }
-        25% {
+        40% {
           background-image: url(images/visual02.jpg);
         }
-        50% {
+        70% {
           background-image: url(images/visual03.jpg);
         }
         100% {
@@ -346,6 +347,7 @@
       }
       .left .box a:hover {
         background: rgba(255, 255, 255, 0.5);
+        border: 0;
         color: #333;
       }
       .left:hover ul {
@@ -393,6 +395,7 @@
       }
       .right div a:hover {
         background: rgba(255, 255, 255, 0.5);
+        border: 0;
         color: #333;
       }
       .right div:hover {
@@ -410,6 +413,7 @@
         align-items: center;
       }
       .foot {
+        position: relative;
         width: 990px;
         margin: 20px auto;
         text-align: center;
@@ -438,6 +442,15 @@
       }
       .foot p:nth-child(3) {
         color: #666;
+      }
+      .foot p:nth-child(4) {
+        position: absolute;
+        top: -10px;
+        right: 0;
+      }
+      .foot p:nth-child(4) img {
+        width: 66px;
+        height: 66px;
       }
     </style>
   </head>
@@ -637,10 +650,11 @@
             <li><a href="#">사이트맵</a></li>
           </ul>
           <p>
-            고객상담팀(수신자 요금 부담) 080-023-5454상담시간 월~금 : AM 09:00 ~
-            PM 06:00
+            고객상담팀(수신자 요금 부담) 080-023-5454 상담시간 월~금 : AM 09:00
+            ~ PM 06:00
           </p>
           <p>© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+          <p><img src="images/wa.png" alt="wa" /></p>
         </div>
       </footer>
     </div>

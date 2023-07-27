@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제품 리뷰 & 해피바스 소식</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      body {
+        font-family: Arial, "나눔 고딕", sans-serif;
+      }
+      .product {
+        width: 990px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+      }
+      .product h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .product .review .box {
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .product .review .box:hover {
+        border-color: #000;
+      }
+      .product .review .box .picture {
+        background: #e8e2ef;
+        /* width: 231px;
+        height: 251px;
+        animation: review 2s infinite both; */
+      }
+      /* @keyframes review {
+        0% {
+          background: #e8e2ef url(images/review01.png);
+        }
+        100% {
+          background: #e8e2ef url(images/review02.png);
+        }
+      } */
+      .product .review .box .desc {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: justify;
+        letter-spacing: -1px;
+      }
+      .product .review .box .desc p:first-child {
+        font-size: 21px;
+      }
+      .product .review .box .desc .star {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .product .news .box {
+        width: 285px;
+        height: 250px;
+        animation: news 2s infinite both;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+      .product .news .box:hover {
+        border-color: #000;
+      }
+      @keyframes news {
+        0% {
+          background: url(images/news01.jpg) no-repeat;
+        }
+        100% {
+          background: url(images/news02.jpg) no-repeat;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product">
+      <div class="review">
+        <h2>제품 리뷰</h2>
+        <div class="box">
+          <div class="picture">
+            <img src="images/review01.png" alt="review01" />
+          </div>
+          <div class="desc">
+            <p>[해피바스 마이크로미셀라 딥 클렌징 폼]</p>
+            <p class="star">
+              <span>pcs0***</span
+              ><span><img src="images/star.png" alt="star" /></span>
+            </p>
+            <p>
+              항상 마이크로 미셀라 딥 클렌징 폼을 사용하는데 역시 세정력
+              우수하고 피부가 개운해요 확실히 마무리가 촉촉한 느낌이 있어요!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="news">
+        <h2>해피바스 소식</h2>
+        <div class="box"></div>
+      </div>
+    </div>
+  </body>
+</html>
