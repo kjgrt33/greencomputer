@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .list {
+        width: 1504px;
+        margin: 0 auto;
+        font-size: 0; /* 이미지 사이마다의 간격을 없애기 위해 !!! */
+      }
+      .list > ul {
+        display: flex;
+        flex-wrap: wrap; /* 이걸로 줄바꿈을 시켜서 레이아웃 배치 !!! */
+      }
+      .list > ul > li {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .list > ul > li .over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        color: #fff;
+        font-size: 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .list > ul > li .over span {
+        opacity: 0;
+        transition: 0.5s ease-in 0.1s;
+      }
+      .list > ul > li .over p {
+        font-weight: bold;
+      }
+      .list > ul > li .over a {
+        display: block;
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-top: 20px;
+        background: #fff;
+        opacity: 0;
+      }
+      .list > ul > li .over a:hover {
+        background: #333;
+        color: #fff;
+        transition: 0s;
+      }
+      .list > ul > li:hover .over {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .list > ul > li:hover span {
+        opacity: 1;
+      }
+      .list > ul > li:hover a {
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+      .list > ul > li .inner {
+        transition: 0.5s;
+      }
+      .list > ul > li:hover .inner {
+        transform: translateY(-20px);
+      }
+      .list > ul > li > img {
+        transform: scale(1);
+        transition: 0.5s;
+      }
+      .list > ul > li:hover > img {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list">
+      <ul>
+        <li>
+          <img src="images/food01.png" alt="food01" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img src="images/m-icon_brand.png" alt="m-icon_brand"
+              /></span>
+              <p>BREAD & STARTER</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <ul>
+            <li><img src="images/food02.png" alt="food02" /></li>
+            <li><img src="images/food03.png" alt="food03" /></li>
+          </ul>
+        </li>
+        <li>
+          <img src="images/food04.jpg" alt="food04" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img src="images/m-icon_starter.png" alt="m-icon_starter"
+              /></span>
+              <p>SALAD</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="images/food05.png" alt="food05" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img src="images/m-icon_pasta.png" alt="m-icon_pasta"
+              /></span>
+              <p>PASTA</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="images/food06.jpg" alt="food06" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img src="images/m-icon_pizza.png" alt="m-icon_pizza"
+              /></span>
+              <p>PIZZA</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="images/food07.jpg" alt="food07" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img
+                  src="images/m-icon_ricerisotto.png"
+                  alt="m-icon_ricerisotto"
+              /></span>
+              <p>RICE & RISOTTO</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="images/food08.jpg" alt="food08" />
+          <div class="over">
+            <div class="inner">
+              <span
+                ><img src="images/m-icon_steak.png" alt="m-icon_steak"
+              /></span>
+              <p>STEAK</p>
+              <a href="#">자세히 보기</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

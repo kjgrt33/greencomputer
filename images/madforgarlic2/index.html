@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .food {
+        width: 1500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .food_top ul {
+        display: flex;
+      }
+      .food_top ul li:nth-child(2) img:nth-child(2) {
+        margin-top: -4px;
+      }
+      .food_top ul li,
+      .food_bottom ul li {
+        position: relative;
+      }
+      .food_top ul li .box,
+      .food_bottom ul li .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: 0.7s;
+      }
+      .food_top ul li .box .hide,
+      .food_bottom ul li .box .hide {
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .food_top ul li:hover .box,
+      .food_bottom ul li:hover .box {
+        top: 45%;
+      }
+      .food_top ul li:hover .box .hide,
+      .food_bottom ul li:hover .box .hide {
+        opacity: 1;
+      }
+      .food_top ul li .box h3,
+      .food_bottom ul li .box h3 {
+        color: #fff;
+        margin: 10px 0 30px;
+      }
+      .food_top ul li .box a,
+      .food_bottom ul li .box a {
+        color: #333;
+        font-size: 13px;
+        letter-spacing: -1px;
+        background: #fff;
+        padding: 10px 20px;
+      }
+      .food_top ul li .box a:hover,
+      .food_bottom ul li .box a:hover {
+        background: #333;
+        color: #fff;
+      }
+      .food_bottom {
+        margin-top: -4px;
+      }
+      .food_bottom ul {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="food">
+        <div class="food_top">
+          <ul>
+            <li>
+              <a href="#">
+                <div class="b_bg"></div>
+                <img src="images/food01.png" alt="food01" />
+              </a>
+              <div class="box">
+                <p class="hide">
+                  <img src="images/m-icon_brand.png" alt="m-icon_brand" />
+                </p>
+                <h3>BREAD & STARTER</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+            <li>
+              <img src="images/food02.png" alt="food02" />
+              <img src="images/food03.png" alt="food03" />
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/food04.jpg" alt="food04" />
+              </a>
+              <div class="box">
+                <p class="hide">
+                  <img src="images/m-icon_starter.png" alt="m-icon_starter" />
+                </p>
+                <h3>SALAD</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/food05.png" alt="food05" />
+              </a>
+              <div class="box">
+                <p class="hide">
+                  <img src="images/m-icon_pasta.png" alt="m-icon_pasta" />
+                </p>
+                <h3>PASTA</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="food_bottom">
+          <ul>
+            <li>
+              <a href="#"> <img src="images/food06.jpg" alt="food06" /></a>
+              <div class="box">
+                <p class="hide">
+                  <img src="images/m-icon_pizza.png" alt="m-icon_pizza" />
+                </p>
+                <h3>PIZZA</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+            <li>
+              <a href="#"> <img src="images/food07.jpg" alt="food07" /></a>
+              <div class="box">
+                <p class="hide">
+                  <img
+                    src="images/m-icon_ricerisotto.png"
+                    alt="m-icon_ricerisotto"
+                  />
+                </p>
+                <h3>RICE & RISOTTO</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+            <li>
+              <a href="#"> <img src="images/food08.jpg" alt="food08" /></a>
+              <div class="box">
+                <p class="hide">
+                  <img src="images/m-icon_steak.png" alt="m-icon_pasta" />
+                </p>
+                <h3>STEAK</h3>
+                <p class="hide"><a href="#">자세히 보기</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
