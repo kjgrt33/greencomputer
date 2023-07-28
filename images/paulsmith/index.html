@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    #wrap {
+      width: 1903px;
+      margin: 0 auto;
+    }
+    .util {
+      background: #191919;
+      height: 30px;
+    }
+    .util ul {
+      width: 1800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .util ul li {
+      margin-left: 10px;
+    }
+    .util ul li a {
+      color: #fff;
+      font-size: 13px;
+      line-height: 30px;
+    }
+    header {
+      width: 1800px;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .header_wrap {
+      width: calc(50% + 98.5px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header_wrap .search ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header_wrap .search ul li {
+      margin-left: 20px;
+    }
+    nav {
+      width: 600px;
+      margin: 30px auto 50px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    nav ul li a {
+      color: #333;
+      font-size: 14px;
+    }
+    nav ul li a:after {
+      content: "∨";
+      margin-left: 5px;
+    }
+    .mint {
+      background: #80d4c7;
+      height: 50px;
+    }
+    .mint ul {
+      width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      line-height: 50px;
+    }
+    .mint ul li a {
+      color: #333;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    .visual {
+      width: 1903px;
+      height: 833px;
+      margin: 0 auto;
+    }
+    section .same {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    section .same ul {
+      display: flex;
+    }
+    section .same p a {
+      color: #333;
+      font-size: 15px;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      letter-spacing: 3px;
+    }
+    section .category {
+      height: 790px;
+    }
+    section .collection {
+      height: 550px;
+      justify-content: space-between;
+    }
+    .footmenu {
+      margin: 40px auto;
+      background: #f8f8f8;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .footmenu > ul {
+      width: 1111px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footmenu > ul > li > a {
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+    .footmenu .subnav {
+      margin-top: 20px;
+    }
+    .footmenu .subnav li {
+      margin-bottom: 10px;
+    }
+    .footmenu .subnav li a {
+      color: #666;
+      font-size: 13px;
+    }
+    .footmenu .subscribe {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .footmenu .email p {
+      color: #555;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .footmenu .email input {
+      border: 1px solid #ccc;
+      width: 155px;
+      height: 40px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+    .footmenu .email input::placeholder {
+      color: #ccc;
+    }
+    :focus {
+      outline: none;
+    }
+    .footmenu .email a {
+      display: inline-block;
+      color: #fff;
+      background: #191919;
+      padding: 0 20px;
+      line-height: 40px;
+      font-size: 14px;
+    }
+    .footmenu .sns {
+      display: flex;
+      justify-content: space-between;
+    }
+    footer {
+      width: 1111px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    footer .logo img {
+      width: 120px;
+    }
+    footer .footnav ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    footer .footnav ul li {
+      font-size: 13px;
+      color: #555;
+      margin-left: 10px;
+    }
+    footer .footnav ul li:after {
+      content: "|";
+      margin-left: 10px;
+    }
+    footer .footnav ul li:last-child:after {
+      content: "";
+    }
+    footer .footnav ul li a {
+      color: #555;
+    }
+    .emailicon {
+      position: fixed; /* fixed는 단독으로 쓸 수 있다. */
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+  <body>
+    <div id="wrap">
+      <div class="util">
+        <ul>
+          <li><a href="#">Shop Locator</a></li>
+          <li><a href="#">My Acoount</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </div>
+      <header>
+        <div class="header_wrap">
+          <div class="logo">
+            <a href="#"><img src="images/paul_03.png" alt="paul_03" /></a>
+          </div>
+          <div class="search">
+            <ul>
+              <li>
+                <a href="#"><img src="images/paul_05.png" alt="paul_05" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_07.png" alt="paul_07" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#">SALE</a></li>
+          <li><a href="#">NEW ARRIVALS</a></li>
+          <li><a href="#">MENS</a></li>
+          <li><a href="#">WOMENS</a></li>
+          <li><a href="#">JUNIOR</a></li>
+          <li><a href="#">STORIES</a></li>
+        </ul>
+      </nav>
+      <div class="mint">
+        <ul>
+          <li><a href="#">FREE CLICK & COLLECT</a></li>
+          <li><a href="#">FREE SHOPPING ON ORDERS OVER L200</a></li>
+          <li><a href="#">FREE RETURNS</a></li>
+        </ul>
+      </div>
+      <div class="visual"><img src="images/paul_12.jpg" alt="paul_12" /></div>
+      <section>
+        <div class="category same">
+          <p><a href="#">Shop by Category</a></p>
+          <ul>
+            <li><img src="images/paul_14.jpg" alt="paul_14" /></li>
+            <li><img src="images/paul_15.gif" alt="paul_15" /></li>
+            <li><img src="images/paul_16.jpg" alt="paul_16" /></li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="collection same">
+          <p><a href="#">Shop by Collection</a></p>
+          <ul>
+            <li><img src="images/paul_18.jpg" alt="paul_18" /></li>
+            <li><img src="images/paul_19.jpg" alt="paul_19" /></li>
+            <li><img src="images/paul_20.jpg" alt="paul_20" /></li>
+            <li><img src="images/paul_21.jpg" alt="paul_21" /></li>
+          </ul>
+        </div>
+      </section>
+      <div class="footmenu">
+        <ul>
+          <li>
+            <a href="#">CUSTOMER SERVICES</a>
+            <ul class="subnav">
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+              <li>
+                <a href="#">Paul Smith Price Match</a>
+              </li>
+              <li>
+                <a href="#">Payment Methods</a>
+              </li>
+              <li>
+                <a href="#">Returns</a>
+              </li>
+              <li>
+                <a href="#">Shipping</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">YOUR PAUL SMITH</a>
+            <ul class="subnav">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Check Your Gift Balance</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">ABOUT PAUL SMITH</a>
+            <ul class="subnav">
+              <li><a href="#">Company History</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Shop Locator</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="email">
+              <p>Email Updates</p>
+              <div class="subscribe">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  onfocus="this.placeholder=''"
+                /><a href="#">Subscribe</a>
+              </div>
+            </div>
+            <ul class="sns">
+              <li>
+                <a href="#"><img src="images/paul_24.gif" alt="paul_24" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_26.gif" alt="paul_26" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_28.gif" alt="paul_28" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_30.gif" alt="paul_30" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_32.gif" alt="paul_32" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_34.gif" alt="paul_34" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="images/paul_36.gif" alt="paul_36" /></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <div class="logo"><img src="images/paul_03.png" alt="paul_03" /></div>
+        <div class="footnav">
+          <ul>
+            <li>ⓒ Paul Smith</li>
+            <li><a href="#">Terms & conditions</a></li>
+            <li><a href="#">Privacy & Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div class="emailicon">
+          <a href="#"><img src="images/paul_46.png" alt="paul_46" /></a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
