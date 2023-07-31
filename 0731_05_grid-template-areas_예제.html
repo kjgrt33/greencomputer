@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-areas:
+          "logo1 menu menu menu menu menu"
+          "slide slide slide slide slide slide"
+          "notice notice banner1 banner1 banner2 banner2"
+          "logo2 copyright copyright copyright copyright sns";
+        grid-template-columns: 100px 250px 250px 250px 250px 100px;
+        grid-template-rows: 100px 300px 200px 100px;
+      }
+
+      .grid > div:first-child {
+        grid-area: logo1;
+        background: red;
+      }
+      .grid > div:nth-child(2) {
+        grid-area: menu;
+        background: greenyellow;
+      }
+      .grid > div:nth-child(3) {
+        grid-area: slide;
+        background: #ddd;
+      }
+      .grid > div:nth-child(4) {
+        grid-area: notice;
+        background: #ccc;
+      }
+      .grid > div:nth-child(5) {
+        grid-area: banner1;
+        background: #bbb;
+      }
+      .grid > div:nth-child(6) {
+        grid-area: banner2;
+        background: #aaa;
+      }
+      .grid > div:nth-child(7) {
+        grid-area: logo2;
+        background: red;
+      }
+      .grid > div:nth-child(8) {
+        grid-area: copyright;
+        background: greenyellow;
+      }
+      .grid > div:nth-child(9) {
+        grid-area: sns;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid container1">
+      <div class="grid-item">logo1</div>
+      <div class="grid-item">menu</div>
+      <div class="grid-item">slide</div>
+      <div class="grid-item">notice/gallery</div>
+      <div class="grid-item">banner1</div>
+      <div class="grid-item">banner2</div>
+      <div class="grid-item">logo2</div>
+      <div class="grid-item">copyright</div>
+      <div class="grid-item">sns</div>
+    </div>
+  </body>
+</html>
