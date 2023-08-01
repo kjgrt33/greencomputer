@@ -8,22 +8,25 @@
     <style>
       .grid-container {
         display: grid;
-        /*display: inline-grid; /* inline-grid는 하위요소의 값만큼 부모는 크기를 갖게된다. */
         background: #ccc;
-        /* grid-template-columns: 100px 200px 300px; /* columns열을 줌으로써 행도 같이 생겨보임 */
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* grid-template-columns: 100px 1fr 2fr; */
-        grid-template-columns: repeat(3, minmax(500px, auto));
-        grid-template-rows: 100px; /* 첫줄이 100px 두번째줄이 200px*/
-        grid-auto-rows: 50px;
-        /* row-gap: 10px;
-        column-gap: 20px; */
-        gap: 10px 50px; /* rows/column */
+        grid-template-columns: 200px;
+        grid-auto-columns: 50px 100px;
       }
       .grid-item {
         background: #ddd;
+        border: 1px solid #000;
       }
+      .grid-item:first-child {
+        /* grid-column-start: 3;
+        grid-column-end: 3; */
+        grid-column: 2;
+        /* grid-row-start: 2;
+        grid-row-end: 3; */
+        grid-row: 1 / 5;
+      }
+      /* .grid-item:first-child {
+        z-index: 1;
+      } */
     </style>
   </head>
   <body>

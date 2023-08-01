@@ -7,22 +7,19 @@
     <title>Document</title>
     <style>
       .grid-container {
+        width: 1200px;
+        height: 500px;
+        margin: 10px auto;
         display: grid;
-        /*display: inline-grid; /* inline-grid는 하위요소의 값만큼 부모는 크기를 갖게된다. */
         background: #ccc;
-        /* grid-template-columns: 100px 200px 300px; /* columns열을 줌으로써 행도 같이 생겨보임 */
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* grid-template-columns: 100px 1fr 2fr; */
-        grid-template-columns: repeat(3, minmax(500px, auto));
-        grid-template-rows: 100px; /* 첫줄이 100px 두번째줄이 200px*/
-        grid-auto-rows: 50px;
-        /* row-gap: 10px;
-        column-gap: 20px; */
-        gap: 10px 50px; /* rows/column */
+        grid-template-columns: repeat(3, 10%);
+        /* justify-content: space-between; /* justify-content는 수평 */
+        /* align-content: center; /* align-content는 수직 */
+        place-content: center space-between; /* align/justify */
       }
       .grid-item {
         background: #ddd;
+        border: 1px solid #000;
       }
     </style>
   </head>
@@ -37,6 +34,7 @@
       <div class="grid-item">7</div>
       <div class="grid-item">8</div>
       <div class="grid-item">9</div>
+      <div class="grid-item">10</div>
     </div>
   </body>
 </html>

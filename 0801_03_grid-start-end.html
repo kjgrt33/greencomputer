@@ -8,21 +8,34 @@
     <style>
       .grid-container {
         display: grid;
-        /*display: inline-grid; /* inline-grid는 하위요소의 값만큼 부모는 크기를 갖게된다. */
         background: #ccc;
-        /* grid-template-columns: 100px 200px 300px; /* columns열을 줌으로써 행도 같이 생겨보임 */
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* grid-template-columns: 100px 1fr 2fr; */
-        grid-template-columns: repeat(3, minmax(500px, auto));
-        grid-template-rows: 100px; /* 첫줄이 100px 두번째줄이 200px*/
-        grid-auto-rows: 50px;
-        /* row-gap: 10px;
-        column-gap: 20px; */
-        gap: 10px 50px; /* rows/column */
+        grid-template-columns: 50px;
+        grid-auto-columns: 100px;
+        grid-auto-rows: 100px;
+        gap: 10px 30px;
       }
       .grid-item {
         background: #ddd;
+        border: 1px solid #000;
+      }
+      .grid-item:first-child {
+        /* grid-column: 1 / 4; */
+        grid-column: 1 / span 3; /* span은 테이블 colspan, rowspan 합치듯 합칠 수 있는 속성 */
+      }
+      .grid-item:nth-child(2) {
+        grid-column: 5;
+      }
+      .grid-item:nth-child(3) {
+        grid-column: 1 / span 2;
+      }
+      .grid-item:nth-child(4) {
+        /* grid-column: 4 / 6;
+        grid-row: 3 / 5; */
+
+        /* grid-column: 4 / span 2;
+        grid-row: 3 / span 2; */
+        grid-area: 3 / 4 / 5 / 6;
+        /* grid-area: row-start / column-start / row-end / column-end */
       }
     </style>
   </head>
@@ -37,6 +50,7 @@
       <div class="grid-item">7</div>
       <div class="grid-item">8</div>
       <div class="grid-item">9</div>
+      <div class="grid-item">10</div>
     </div>
   </body>
 </html>
