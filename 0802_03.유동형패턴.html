@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1, maximum-scale=1"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .top {
+        height: 400px;
+        background: #aaa;
+      }
+      .contents {
+        height: 400px;
+        display: flex;
+      }
+      .contents .left {
+        width: 50%;
+        height: 100%;
+        background: #bbb;
+      }
+      .contents .right {
+        width: 50%;
+        height: 100%;
+        background: #ccc;
+      }
+      @media screen and (max-width: 500px) {
+        .contents {
+          flex-direction: column;
+        }
+        .contents .left {
+          width: 100%; /* height값이 200px씩 가져간 이유는 flex의 shirink 속성때문에 direction이 column이므로 세로가 (shirink 기본값이 1은) 부모안에 들어가려고 하는 속성이라 그렇다. */
+          flex-shrink: 0; /* 0을 줌으로써 다시 높이를 400px을 갖게 함 */
+        }
+        .contents .right {
+          width: 100%;
+          flex-shrink: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="top"></div>
+      <div class="contents">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </div>
+  </body>
+</html>
