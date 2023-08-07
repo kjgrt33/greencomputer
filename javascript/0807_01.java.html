@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #demo {
+        color: blue;
+      }
+    </style>
+    <script>
+      /* 위에 title이 먼저 나오기 때문에 이부분은 적용됨 
+      document.title = "자바스크립트";*/
+
+      /* 여기엔 demo가 아래에있어서 불러서 읽을 수가 없다. 그렇기 때문에 그 내용이 나온 다음의 body안에 넣으면 불러들어서 바뀐다. 
+      document.getElementById("demo").innerHTML = "Paragraph changed";*/
+
+      /* 이 경우는 일단 이런 함수를 만들어놓고 불러서 넘긴 후 아래 button에 onclick을 했을때 이 myFunction을 불러오라고 해서 불러 올 수 있다. */
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "변경하였습니다";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Demo JavaScript in Head</h2>
+    <p id="demo" style="color: green">A Paragraph</p>
+    <button type="button" onclick="myFunction()">Try it</button>
+    <p class="example">변경전</p>
+    <p class="example">변경전</p>
+    <p class="example">변경전</p>
+    <script>
+      document.title = "자바스크립트";
+      document.getElementById("demo").innerHTML = "Paragraph changed";
+
+      /* 스크립트는 인라인방식으로 스타일이 적용된다. 제일 강력함!!! */
+      document.getElementById("demo").style.color = "red";
+
+      /* 클래스는 여러개가 나올 수 있어서 exapmle 써서 불러온다해도 모든게 바뀌지 않는다. (id는 한개이므로 바뀌지만) // [0]부터 시작을해서 구조상의 class중에 맨 처음 example를 불러와서 바뀐다.*/
+      document.getElementsByClassName("example")[0].innerHTML = "변경후";
+
+      /* 태그 선택자도 여러개가 나올 수 있어서 [2] 이걸로 지정해서 body안에 p의 (0부터 시작하므로) 2면 구조상의 3번째의 p가 바뀐다.*/
+      document.getElementsByTagName("p")[2].style.backgroundColor = "yellow";
+    </script>
+  </body>
+</html>
