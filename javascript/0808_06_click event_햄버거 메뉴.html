@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>햄버거 메뉴</title>
+    <style>
+      p {
+        position: relative;
+        left: 0;
+        transition: 0.5s;
+      }
+      .menu01 {
+        left: 500px; /* 처음이 있어야함 position값이! 그래서 위에 p태그에 포지션값 줌! */
+      }
+      p span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background: #000;
+        margin: 6px 0;
+        transition: transform 0.5s ease-in;
+      }
+      .bar1 {
+        /* height:5px + margin:6px = 11px; */
+        transform: translate(0, 11px) rotate(45deg);
+        transition: transform 0.5s ease-in;
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        transform: translate(0, -11px) rotate(-45deg);
+      }
+      div {
+        /* #side 아이디로 주지않고 div로 준게 그렇게되면 .클래스보다 #아이디가 더 강력해서 .클래스 스타일이 안먹힘 */
+        width: 500px;
+        height: 100%; /*  height: 100%로 주고 싶을때 height:1000vh로 주든 포지션 앱솔루트 주고 height:100%; - 원래 div 자체에 하위요소가 없기 때문에 100%로 줘도 안먹음 */
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: -500px;
+        top: 0;
+        transition: left 0.5s ease-in;
+      }
+      .box {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </p>
+    <div id="side"></div>
+    <script>
+      //document.getElementById("menu").onclick = function () {
+      document.getElementById("menu").addEventListener("click", function () {
+        //document.getElementById("menu").classList.toggle("menu01");
+        this.classList.toggle("menu01"); //this가 선택한 자신.
+        document.getElementsByTagName("span")[0].classList.toggle("bar1");
+        document.getElementsByTagName("span")[1].classList.toggle("bar2");
+        document.getElementsByTagName("span")[2].classList.toggle("bar3");
+        document.getElementById("side").classList.toggle("box");
+      });
+    </script>
+  </body>
+</html>

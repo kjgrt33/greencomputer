@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      let a = 10;
+      let b = 2;
+      // 식이 들어갈때는 ,를 넣거나 식하려는 공간에 ()를 넣어야 식으로 처리됨
+      // document.write("a + b =" + (a + b) + "<br>");
+      document.write("a + b =", a + b, "<br>");
+      document.write("a + b =", a - b, "<br>");
+      document.write("a + b =", a * b, "<br>");
+      document.write("a + b =", a / b, "<br>");
+      document.write("a + b =", a % b, "<br>"); // 10을 2로 나눴을때 나머지는 0. &는 나머지
+      document.write("a + b =", a ** b, "<br>"); // a **는 a의 이승  10*10
+
+      let c = 20;
+      // document.write("c = c + 1 : ", (c = c + 1), "<br>");
+      // document.write("c += 1 : ", (c += 1), "<br>");
+      document.write("++c : ", ++c, "<br>"); // 전의연산. 먼저 더하고 나옴
+      document.write("c : ", c, "<br>");
+      //c=c+1; c+=1; ++c가 다 같다 1씩 더해짐
+
+      let d = 20;
+      document.write("d++ : ", d++, "<br>"); // 후의연산. 나오고 나중에 더함
+      document.write("d : ", d, "<br>");
+
+      let e = 20;
+      document.write("--e : ", --e, "<br>"); // 전의연산. 먼저 빼고 나옴
+      document.write("e : ", e, "<br>");
+
+      let f = 20;
+      document.write("f-- : ", f--, "<br>"); // 후의연산. 나오고 나중에 뺌
+      document.write("f : ", f, "<br>");
+    </script>
+  </body>
+</html>

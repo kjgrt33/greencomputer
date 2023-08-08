@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .list {
+        color: red;
+        border: 1px solid #000;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <button id="toggle">toggle</button>
+    <div id="my" class="list">classList 속성</div>
+
+    <p id="demo"></p>
+    <p id="p01" class="a1 b1 c1">1</p>
+    <p id="p02"></p>
+    <script>
+      let ele = document.getElementById("my").classList; // 변수를 먼저 맨위에 지정하면 밑에 공통적으로 다 쓸 수 있다.
+
+      document.getElementById("add").onclick = function () {
+        ele.add("list");
+      };
+      document.getElementById("remove").onclick = function () {
+        ele.remove("list");
+      };
+      document.getElementById("toggle").onclick = function () {
+        ele.toggle("list");
+      };
+
+      //document.getElementById("add").onclick = function () {
+      //let ele = document.getElementById("my").classList;
+      //ele.add("list");
+      //};
+      //document.getElementById("remove").onclick = function () {
+      // let ele = document.getElementById("my").classList;
+      // ele.remove("list");
+      //};
+      //document.getElementById("toggle").onclick = function () {
+      //let ele = document.getElementById("my").classList;
+      //ele.toggle("list");
+      //};
+
+      //let a = document.getElementById("my").classList.contains("list");
+      let a = ele.contains("list");
+      document.getElementById("demo").innerHTML = a;
+
+      let num = document.getElementById("p01").classList.length; //length는 갯수 = 클래스가 3개로 지정했으므로 3으로 뜸
+      let b = document.getElementById("p01").classList;
+      let c = "";
+      let d = "";
+      console.log(num + b);
+      b.forEach(function (keys, item) {
+        // keys는 클래스이름 / item은 인덱스번호[0]
+        //c = c + 1; // c+=1
+        // c = c + "keys " + item + "=" + keys + "<br>";
+        c += "keys " + item + "=" + keys + "\r"; // console콘솔에서 \r이 줄바꿈 처리
+        d += "keys " + item + "=" + keys + "<br>";
+        console.log(c);
+        document.getElementById("p02").innerHTML = d;
+      });
+      console.log("하나" + "둘" + "셋"); // +는 결합
+      console.log(1 + 2 + 3); // +는 덧셈
+    </script>
+  </body>
+</html>
