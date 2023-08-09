@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 10;
+      let b = 20;
+      let c = 30;
+      let d = 40;
+      let e = "10";
+      document.write(a < b && c < d, "<br>"); // && 둘중에 하나라도 거짓이 있으면 false가 나옴, 둘다 참이면 true
+      document.write(a > b || c < d, "<br>"); // || 하나라도 참이면 false
+      document.write(!a > b || c < d, "<br>"); // !는 a>b가 거짓인데 !로 부정해서 true로 나옴
+      document.write(a === e, "<br>");
+      document.write(typeof a, "<br>"); //typeof는 a타입이 무엇이니. number는 숫자
+      document.write(typeof e, "<br>"); //typeof는 a타입이 무엇이니. string은 문자
+
+      let f = Number("10");
+      document.write(typeof f, "<br>"); // Number()는 변수(또는 값)를 숫자로 출력
+
+      let g = Number("하나");
+      document.write(g, "<br>"); // NaN(Not a Number)
+
+      document.write(typeof parseFloat(10.33), "<br>");
+      document.write(typeof parseFloat("10.33"), "<br>");
+      document.write(parseFloat("40 50 60"), "<br>"); //parseFloat 숫자 처음나오는 것만 출력. 처음에 나오는게 문자면 NaN(Not a Number)로 나옴
+      document.write(parseFloat("40h"), "<br>");
+      document.write(parseFloat("h40"), "<br>");
+
+      document.write(parseInt(10.33), "<br>"); // 정수로 출력. 소수점 버림
+      document.write(parseInt(10.55), "<br>");
+
+      // let y = "5"; //"5"는 문자
+      let y = "하나";
+      let x = +y; // x= +"5"로인데 +로 인해서 x는 숫자는 아니지만 type이 숫자로 변환
+      document.write(typeof y + "<br>" + typeof x + "<br>");
+    </script>
+  </body>
+</html>

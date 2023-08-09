@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let a = 10;
+      let b = 20;
+      let c = "10";
+      document.write("a > b = ", a > b, "<br>");
+      document.write("a < b = ", a < b, "<br>");
+      document.write("a >= b = ", a >= b, "<br>");
+      document.write("a <= b = ", a <= b, "<br>");
+      document.write("a == b = ", a == b, "<br>");
+      document.write("a != b = ", a != b, "<br>");
+
+      document.write("a == c = ", a == c, "<br>"); // == 동일
+      document.write("a === c = ", a === c, "<br>"); // === 동일한 값 및 동일한 유형
+      document.write("a != c = ", a != c, "<br>"); // !== 같지 않다
+      document.write("a !== c = ", a !== c, "<br>"); // !== 같지 않은 값 또는 같지 않은 유형
+
+      let d = a > b ? "참" : "거짓"; // ? 삼항 연산자. a가 b보다 크니? 크면 참이고 작으면 거짓이 출력
+      document.write(d + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

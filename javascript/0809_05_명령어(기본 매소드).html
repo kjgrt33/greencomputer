@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // alert("확인하세요"); // 경고창 window.alert() -> window는 생략가능
+      // prompt("당신의 성별은?"); // 메시지와 입력 필드를 가진 다이얼로그 박스. 사용자로부터 숫자나 문자열을 입력받고자 할 때 사용
+      let result = confirm("흡연을 하시나요?"); // OK/Cancel버튼을 포함한 다이얼로그 박스. 사용자로부터 응답을 듣고 싶을 때 사용
+      document.write(
+        result ? "당신은 흡연가입니다." : "당신은 비흡연가입니다."
+      ); // 삼항연산 조건 ? 참 : 거짓
+    </script>
+  </body>
+</html>
