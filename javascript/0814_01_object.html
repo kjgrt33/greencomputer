@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      /*let firstName = "John";
+        let lastName = "Doe";
+        let age = 50;
+        let eyeColor = "blue";
+        document.getElementById("demo").innerHTML =
+          firstName + lastName + " is " + age + " years old.";*/
+
+      // 하나의 변수값에 여러개의 속성을 써서 사용 할 수 있는게 object.
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+        hobby: "여행",
+        area: "대전",
+        fullName: function () {
+          return this.firstName + " " + this.lastName; //return 다음과 같은 실행문을 반환해주는것
+        },
+      };
+      /*document.getElementById("demo").innerHTML =
+          person.fullName() + " is " + person.age + " years old.";*/ // 객체.속성 , 객체.메소드() 이므로 fullName은 위에서 메소드로 처리했기 때문에 메소드라 인지하고 여기에도 꼭 ()이걸 넣어줘야함!!!
+
+      let person1 = {};
+      person1.firstName = "Hyeji";
+      person1.lastName = "Jeong";
+      person1.age = 20;
+
+      document.getElementById("demo").innerHTML =
+        person.fullName() +
+        " is " +
+        person.age +
+        " years old.<br>" +
+        // document.write(person1.firstName + " is " + person1.age + " years old.");
+        person1.firstName +
+        " is " +
+        person1.age +
+        " years old.";
+
+      let student = new Object();
+      student.kor = 80;
+      student.eng = 90;
+      student.math = 100;
+      student.total = student.kor + student.eng + student.math;
+      student.avg = function () {
+        document.write(
+          "총점은 " +
+            student.total +
+            "이고 " +
+            "평균은 " +
+            student.total / 3 +
+            "점 입니다."
+        );
+      };
+      student.avg();
+    </script>
+  </body>
+</html>
