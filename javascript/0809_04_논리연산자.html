@@ -14,8 +14,8 @@
       let d = 40;
       let e = "10";
       document.write(a < b && c < d, "<br>"); // && 둘중에 하나라도 거짓이 있으면 false가 나옴, 둘다 참이면 true
-      document.write(a > b || c < d, "<br>"); // || 하나라도 참이면 false
-      document.write(!a > b || c < d, "<br>"); // !는 a>b가 거짓인데 !로 부정해서 true로 나옴
+      document.write(a > b || c < d, "<br>"); // || 하나라도 참이면 true
+      document.write(!(a > b) || c > d, "<br>"); // !는 a>b가 거짓인데 !로 부정해서 true로 나옴
       document.write(a === e, "<br>");
       document.write(typeof a, "<br>"); //typeof는 a타입이 무엇이니. number는 숫자
       document.write(typeof e, "<br>"); //typeof는 a타입이 무엇이니. string은 문자
