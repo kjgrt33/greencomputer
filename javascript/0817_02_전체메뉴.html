@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        position: relative;
+      }
+      .menu {
+        width: 1280px;
+        margin: 0 auto;
+        border: 1px solid #000;
+      }
+      .menu ul {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu ul li {
+        flex: 1 1 20%; /* flex:grow shirink basis. 속성에 너비로 준걸 이렇게 주는게 좋음 */
+        text-align: center;
+        line-height: 50px;
+      }
+      .menu ul li:hover,
+      .menu ul li.on {
+        background: #ccc;
+      }
+      .menu ul li a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .menu ul li a:hover:after,
+      .menu ul li a.active:after {
+        position: absolute;
+        right: 30%;
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #000;
+      }
+      .submenu {
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        height: 0;
+        overflow: hidden; /* 높이값 0줬지만 서브메뉴들 리스트가 보여서 이걸 줘야함! */
+        background: rgba(0, 0, 0, 0.5);
+        transition: height 0.5s;
+      }
+      .submenu.on {
+        height: 200px;
+      }
+      .submenu .lnb {
+        width: 1280px;
+        margin: 0 auto;
+      }
+      .submenu .lnb > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .submenu .lnb > ul > li {
+        flex: 1 1 20%;
+        line-height: 40px;
+        text-align: center;
+      }
+      .submenu .lnb > ul > li a {
+        color: #333;
+      }
+      .submenu .lnb > ul > li a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+          <li><a href="#">메뉴5</a></li>
+        </ul>
+      </div>
+      <div class="submenu">
+        <div class="lnb">
+          <ul>
+            <!-- 위에 대메뉴처럼 ul li를 놓고 그안에 서브메뉴 ul li가 있어야한다! -->
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <script>
+      let subMenu = document.querySelector(".submenu");
+      let sub = document.querySelectorAll(".lnb>ul>li");
+      let gnb = document.querySelectorAll(".menu ul li");
+      gnb.forEach(function (item, keys) {
+        // menu ul li에 어디 li에 갈지 모르니 여러개여서 forEach로 적어서 찾아가라.
+        item.addEventListener("mouseenter", function () {
+          subMenu.classList.add("on");
+        });
+        item.addEventListener("mouseleave", function () {
+          subMenu.classList.remove("on");
+        });
+      });
+      sub.forEach(function (item, keys) {
+        let x = gnb[keys].querySelector("a"); //이변수는 아래랑 그 밑에도 써야하므로 위에 변수 x를 선언한다.
+        item.addEventListener("mouseenter", function () {
+          subMenu.classList.add("on");
+          gnb[keys].classList.add("on");
+
+          x.classList.add("active");
+        });
+        item.addEventListener("mouseleave", function () {
+          subMenu.classList.remove("on");
+          gnb[keys].classList.remove("on");
+
+          x.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
