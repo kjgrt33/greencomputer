@@ -382,8 +382,8 @@
       subMenu.forEach(function (item, keys) {
         item.addEventListener("mouseenter", function (e) {
           let j = Array.from(subMenu).indexOf(e.target);
-          sub.forEach(function () {
-            let subht = sub[j].offsetHeight;
+          Lnb.forEach(function () {
+            let subht = Lnb[j].offsetHeight;
             console.log("subht : " + subht);
             subMenu[j].style.height = subht + "px";
             subMenu[j].style.opacity = "1";
