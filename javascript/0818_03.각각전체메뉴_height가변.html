@@ -351,14 +351,8 @@
       let subMenu = document.querySelectorAll(".submenu");
       let gnb = document.querySelectorAll(".menu ul li a");
       let Lnb = document.querySelectorAll(".lnb");
-      let ht = Lnb[2].offsetHeight; // offsetHeight 높이값을 알아서 계산해서 가지고옴
-      console.log("ht : " + ht);
-      for (let i = 0; i <= 4; i++) {
-        subMenu[i].style.opacity = "0";
-      }
 
       gnb.forEach(function (item, keys) {
-        console.log(keys);
         item.addEventListener("mouseenter", function (e) {
           let j = Array.from(gnb).indexOf(e.target); // 마우스 올린것을 찾아주는것
           // 마우스 올린거 아닌것을 찾아주는것
@@ -374,10 +368,14 @@
           Lnb.forEach(function () {
             let subht = Lnb[j].offsetHeight;
             console.log("j : " + j);
-
             subMenu[j].style.height = subht + "px";
             subMenu[j].style.opacity = "1";
           });
+        });
+        item.addEventListener("mouseleave", function () {
+          for (let i = 0; i <= 4; i++) {
+            subMenu[i].style.height = 0 + "px";
+          }
         });
       });
 
@@ -388,10 +386,6 @@
         item.addEventListener("mouseleave", function (e) {
           let j = Array.from(subMenu).indexOf(e.target);
           subMenu[j].style.height = 0 + "px";
-
-          /*for (let i = 0; i <= 4; i++) {
-            subMenu[i].style.height = 0 + "px";
-          }*/
 
           gnb[keys].classList.remove("on", "active");
         });

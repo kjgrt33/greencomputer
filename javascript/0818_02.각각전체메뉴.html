@@ -405,6 +405,12 @@
           subMenu[j].style.height = "300px"; //auto로하면 높이값은 찾아오지만 transition 스타일이 안먹는다.
           subMenu[j].style.opacity = "1";
         });
+
+        item.addEventListener("mouseleave", function () {
+          for (let i = 0; i <= 4; i++) {
+            subMenu[i].style.height = 0 + "px";
+          }
+        });
       });
 
       subMenu.forEach(function (item, keys) {
