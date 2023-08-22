@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String : 자바스크립트에서 문자열을 다루는 객체
+      // let str = "nice to meet you";
+      let str = new String("nice to meet to meet you");
+      document.write(str.search("me") + "<br>"); // 8이 나옴. 해당 인덱스 번호를 반환하는 것이 search 공백까지 포함 0부터 시작. 만약 그 해당 문자가 없으면 -1로 반환
+      document.write(str.replace("nice", "happy") + "<br>"); // replace는 앞에 문자를 뒤에 문자로 대체해서 반환
+
+      document.write(str.indexOf("to") + "<br>"); //indexOf는 앞에서부터 만나는 요소 인덱스 번호 반환
+      document.write(str.lastIndexOf("to") + "<br>"); //lastIndexOf는 뒤에서부터 만나는 요소 인덱스 번호 반환
+
+      document.write("match : " + str.match("nice") + "<br>"); // match는 매치 되는게 있으면 해당 문자를 반환해주고 없으면 null값으로 반환
+
+      document.write("charAt : " + str.charAt(3) + "<br>"); // charAt는 해당 인덱스번호의 문자를 반환
+
+      document.write("substr : " + str.substr(0, 3) + "<br>"); // substr는 (start, length) 인덱스번호, 길이(갯수). () 안에 아무 요소 없으면 전부 다 가져옴
+      document.write("substr : " + str.substr(-2) + "<br>"); // -음의 값이 들어가면 뒤에서 부터 가져온다.
+      document.write("substr : " + str.substr(-3, 1) + "<br>");
+
+      document.write("substring : " + str.substring() + "<br>");
+      document.write("substring : " + str.substring(0, 3) + "<br>"); // substring(start(문자포함), end(문자포함아님))
+      document.write("substring : " + str.substring(-3, 3) + "<br>"); // substring은 -음의값을 적어도 음의값을 취급하지않음 0으로 처리. 음수(0보다 작은값)가 입력되면 0으로 처리
+
+      let txt = "123456-1234567";
+      // document.write(txt.replace("1234567", "*******"));
+
+      // document.write(txt.replace(txt.substr(7), "*******"));
+      document.write("길이 : " + txt.length + "<br>");
+      //document.write(txt.replace(txt.substr(txt.length - 6), "*******"));
+      //document.write(txt.substring(0, 8) + "******");
+      document.write(txt.substring(0, txt.length - 6) + "******" + "<br>");
+
+      //slice(start(문자포함), end(문자포함아님))
+      document.write(txt.slice(0) + "<br>");
+      document.write(txt.slice(0, 7) + "<br>");
+      document.write(txt.slice(-2) + "<br>");
+      document.write(txt.slice(-3, -2) + "<br>");
+
+      document.write(str.split(" ") + "<br>"); //split는 문자들을 나눠줘서 배열로 취급
+      let arr = str.split(" ");
+      document.write(arr[1] + "<br>");
+
+      let txt2 = "nice, to, meet, you";
+      let arr2 = txt2.split(",");
+      let n = arr2.length; //length는 4개로 취급
+      for (let i = 0; i < n; i++) {
+        document.write(arr2[i] + "<br>");
+      }
+
+      document.write(txt2.toUpperCase() + "<br>"); // toUpperCase는 대문자로 다 변환
+
+      let txt3 = "Microsoft and microsoft and microsoft";
+      document.write(txt3.replace("microsoft", "마이크로소프트") + "<br>");
+      document.write(txt3.replaceAll("microsoft", "마이크로소프트") + "<br>");
+      document.write(txt3.replace(/microsoft/i, "마이크로소프트") + "<br>");
+      document.write(txt3.replace(/microsoft/g, "마이크로소프트") + "<br>");
+      document.write(txt3.replace(/Microsoft/g, "마이크로소프트") + "<br>");
+    </script>
+  </body>
+</html>
