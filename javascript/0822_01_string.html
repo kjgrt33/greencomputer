@@ -60,8 +60,8 @@
       let txt3 = "Microsoft and microsoft and microsoft";
       document.write(txt3.replace("microsoft", "마이크로소프트") + "<br>");
       document.write(txt3.replaceAll("microsoft", "마이크로소프트") + "<br>");
-      document.write(txt3.replace(/microsoft/i, "마이크로소프트") + "<br>");
-      document.write(txt3.replace(/microsoft/g, "마이크로소프트") + "<br>");
+      document.write(txt3.replace(/microsoft/i, "마이크로소프트") + "<br>"); // /microsoft/i는 대소문자 구분한 첫번째 항목. 대소문자를 구분하지않는 일치수행
+      document.write(txt3.replace(/microsoft/g, "마이크로소프트") + "<br>"); // g는 대소문자 구분하고 replaceAll처럼 해당 전체 항목. 전역 일치 수행(첫 번째 일치 후 중지하지 않고 모든 일치 찾기)
       document.write(txt3.replace(/Microsoft/g, "마이크로소프트") + "<br>");
     </script>
   </body>
