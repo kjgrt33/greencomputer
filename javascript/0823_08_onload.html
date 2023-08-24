@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script>
+      window.onload = function () {
+        // 웹페이지가 모두 로드된 후에 실행되는 코드. 원래는 스크립트가 바디 위에 있으면 해당 id값을 처음부터 로드되니 찾지 못하는데 이 코드를 쓰면 로드된 후에 id를 찾아올 수 있다.
+        // document.getElementById("demo").innerHTML = "Onload";
+      };
+      window.addEventListener("load", function () {
+        // document.getElementById("demo").innerHTML = "Onload";
+      });
+
+      // 위에것과 다 같다. window냐 document냐의 문법차이
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("demo").innerHTML = "Onload";
+      });
+    </script>
+  </head>
+  <body>
+    <p id="demo"></p>
+  </body>
+</html>

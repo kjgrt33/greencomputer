@@ -10,7 +10,6 @@ let j = Math.floor(Math.random() * 5); // 0,1,2,3,4
 document.querySelector("body").style.backgroundColor = bg[j];
 
 // let n = Math.floor(Math.random() * 6); // 0,1,2,3,4,5
-// let n = Math.floor(Math.random() * 6); // 0,1,2,3,4,5
 let n = Math.floor(Math.random() * 6); // 0,1,2,3,4,5
 document.querySelector("body").style.backgroundImage =
   "url(images/photo" + (n + 1) + ".jpg)"; //1,2,3,4,5,6

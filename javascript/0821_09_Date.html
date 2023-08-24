@@ -31,8 +31,10 @@
       document.write("Time : " + x.getTime() + "<br>"); // 시간을 밀리초로 가져옴
 
       let m = x.getMinutes() < 10 ? "0" + x.getMinutes() : x.getMinutes();
+      console.log(m);
       document.write(
-        "시간 : " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds()
+        //"시간 : " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds()
+        "시간 : " + x.getHours() + ":" + m + ":" + x.getSeconds()
       );
     </script>
   </body>
