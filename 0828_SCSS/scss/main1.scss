@@ -1,0 +1,69 @@
+//변수를 지정해서 스타일을 사용 할 수 있다.
+
+//전역변수
+$bg: #ccc;
+$Fcolor: #000;
+$width: 1000px;
+$imgUrl: "images/";
+
+nav {
+  width: $width;
+  margin: 0 auto;
+  background: $bg;
+  ul {
+    display: flex;
+    li {
+      background: url($imgUrl + "photo1.jpg");
+      a {
+        width: $width;
+        color: $Fcolor;
+        text-decoration: none;
+      }
+    }
+  }
+}
+header {
+  $width: 100px; // 지역변수
+  .head {
+    .gnb {
+      li {
+        width: $width;
+      }
+    }
+  }
+}
+$wd1: 400px;
+$wd2: 300px;
+footer {
+  > div {
+    height: 100px;
+  }
+  .top {
+    width: $wd1;
+    // background: if(조건,참,거짓);
+    // background: if($wd1 > 500, red, blue);
+    background: if(
+      $wd1 >= 500 and $wd1 <= 1000,
+      red,
+      blue
+    ); //and 조건(논리연산자)
+  }
+  .bottom {
+    width: $wd2;
+    background: if($wd1 > 500, red, blue);
+  }
+}
+
+// 1부터 3까지 반복
+@for $i from 1 through 3 {
+  .menu:nth-child(#{$i}) {
+    width: 50px * $i;
+  }
+}
+
+// 1부터 2까지 반복
+@for $i from 1 to 3 {
+  .menu1:nth-child(($i)) {
+    width: 50px * $i;
+  }
+}

@@ -1,0 +1,13 @@
+nav {
+  width: 1280px;
+  margin: 0 auto;
+  ul {
+    display: flex;
+    li {
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}
