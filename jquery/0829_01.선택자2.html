@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 반드시 이게 있어야함!!!-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <p>문단태그</p>
+    <p>문단태그</p>
+    <p>문단태그</p>
+    <p>문단태그</p>
+    <p>문단태그</p>
+    <p>문단태그</p>
+
+    <!-- 아래에 있으면 준비됐다는 선언 할 필요 없다. 위에서부터 html 다 읽고 실행하기 때문 -->
+    <script>
+      // $("p").text("변경되었습니다.");
+
+      // document.getElementsByTagName("p")[0].textContent = "변경되었습니다.";
+      /*for (let i = 0; i <= 5; i++) {
+        document.getElementsByTagName("p")[i].textContent = "변경되었습니다.";
+      }*/
+
+      // 제이쿼리로 첫번째 선택하는 방법 4가지!
+      // $("p:first").text("변경되었습니다.");
+      // $("p:first-child").text("변경되었습니다.");
+      // $("p").eq(0).text("변경되었습니다."); // index번호는 0부터 시작
+      // $("p:eq(0)").text("변경되었습니다.");
+
+      // $("p:gt(0)").text("변경되었습니다."); //gt(0)보다 큰 great than
+      // $("p:lt(2)").text("변경되었습니다."); //lt(2)보다 작은 less than
+
+      // $("p:even").text("변경되었습니다."); // even은 짝수만 0부터 시작이라 0,2,4...
+      // $("p:odd").text("변경되었습니다."); // odd는 홀수만 1,3,5...
+
+      // $("div + p").text("변경되었습니다."); // + 인접선택자
+      // $("div ~ p").text("변경되었습니다."); // ~ 형제선택자
+      $(":empty").html("<h1>제목태그</h1>"); //:empty 비어있는 태그를 선택해서 html 구조를 넣어줌
+      $(":header").text("h1태그"); // :header는 h1,h2... 태그들
+      $("h1:contains('h1')").css("color", "red"); // h1:contains(태그) h1 구조중에서 ('h1')이라는 글자가 포함되어있는
+    </script>
+  </body>
+</html>
