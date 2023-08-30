@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        //$("ul").append('<li class="page">page</li>'); //.append() ul태그의 자식요소 뒤에 추가
+        //$('<li class="page">page</li>').appendTo("ul");
+        //$("ul").clone().appendTo("body"); // ul을 복제(클론)를 해서 body태그의 뒤에 추가
+
+        //$("ul").prepend('<li class="page">page</li>'); //.prepend() ul태그의 자식요소 앞에 추가
+        //$('<li class="page">page</li>').prependTo("ul");
+        //$("ul").clone().prependTo("body"); // ul을 복제(클론)를 해서 body태그의 앞에 추가
+
+        //$("ul:first").wrap('<div class="wrap"></div>'); //.wrap()은 묶을때 쓰는것
+        //$("ul").wrap('<div class="wrap"></div>'); //.wrap()은 묶을때 쓰는것
+        //$("ul li").wrapInner('<div class="wrap"></div>'); //.wrapInner()은 ul li안에를 div로 묶어줌
+        //$("ul").clone().prependTo("body");
+        //$("ul").wrapAll('<div class="wrap"></div>'); //.wrapAll()은 ul을 전체 div로 묶어줌
+
+        //$(".html").after('<li class="page">page</li>'); //.after()는 .html에 뒤에 구조 생김
+        // $(".html").before('<li class="page">page</li>'); //.before()는 .html에 앞에 구조 생김
+        //$('<li class="css3">css3</li>').insertAfter(".css"); //.css 뒤에 <li class="css3">css3</li> 이구조를 추가함
+        //$('<li class="css3">css3</li>').insertBefore(".css"); //.css 앞에 <li class="css3">css3</li> 이구조를 추가함
+
+        //$(".page").replaceWith('<li id="con">변경</li>'); //.replaceWith() .page를 저 구조로 바꿔줌(대체)
+        let txt = $(".html").text();
+        console.log(txt);
+        let txt2 = txt.replace("html", "페이지");
+        console.log(txt2);
+        $(".html").text(txt2);
+
+        //let txt3 = txt.slice(start,end)
+        //let txt3 = txt.substr(start,length)
+        //let txt3 = txt.substring(start,end) //-음의값을 넣으면 앞에서부터 가져옴(음의값을 넣는 의미가 없긴함. 0을 가져옴)
+        let txt3 = txt.slice(0, 2); //ht를 추출함 (html에서)
+        console.log(txt3);
+        let txt4 = txt.substr(0, 2); //ht를 추출함 (html에서)
+        console.log(txt4);
+        let txt5 = txt.slice(-2); //
+        console.log(txt5);
+        let txt6 = txt.substr(-2, 2); //
+        console.log(txt6);
+        let txt7 = txt.substring(-3, 2); //
+        console.log(txt7);
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li class="html">html</li>
+      <li class="css">css</li>
+      <li class="css3">css3</li>
+      <li class="css-3">css-3</li>
+      <li class="javascript">javascript</li>
+      <li class="jquery">jquery</li>
+    </ul>
+  </body>
+</html>
