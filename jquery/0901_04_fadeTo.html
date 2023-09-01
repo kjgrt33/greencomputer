@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("body").append('<div id="page"></div>'); // .append()는 body 자식요소 맨뒤에 추가됨
+        $("#one").click(function () {
+          $("p").fadeTo(1000, 0, function () {
+            $("#page").html(
+              "display : " +
+                $(this).css("display") +
+                "<br>" +
+                "opacity : " +
+                $(this).css("opacity")
+              // this는 "p"
+            );
+          });
+        });
+        $("#two").click(function () {
+          $("p").fadeTo(1000, 0.5, function () {
+            $("#page").html(
+              "display : " +
+                $(this).css("display") +
+                "<br>" +
+                "opacity : " +
+                $(this).css("opacity")
+              // this는 "p"
+            );
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <button id="one">0</button>
+    <button id="two">0.5</button>
+    <button id="three">1</button>
+  </body>
+</html>

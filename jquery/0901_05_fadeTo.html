@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("body").append('<div id="page"></div>'); // .append()는 body 자식요소 맨뒤에 추가됨
+
+        function myfnc() {
+          $("#page").html(
+            "display : " +
+              $("p").css("display") +
+              "<br>" +
+              "opacity : " +
+              $("p").css("opacity")
+          );
+        }
+        /*$("#one").click(function () {
+          $("p").fadeTo(1000, 0, function () {
+            myfnc();
+          });
+        });
+        $("#two").click(function () {
+          $("p").fadeTo(1000, 0.5, function () {
+            myfnc();
+          });
+        });
+        $("#three").click(function () {
+          $("p").fadeTo(1000, 1, function () {
+            myfnc();
+          });
+        });
+        $("#three").click(function () {
+          $("p").fadeTo(1000, 1, myfnc);
+        });*/
+
+        /*$("button").click(function () {
+          $("p").fadeTo(1000, $(this).text(), myfnc);
+        });*/
+        $("button").click(function () {
+          let num = $(this).data("no");
+          $("p").fadeTo(1000, num, myfnc);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <!-- data() 라는걸 위에 쓰기 위해 아래 data-사용자정의이름="속성값" -->
+    <button id="one" data-no="0">투명</button>
+    <button id="two" data-no="0.5">반투명</button>
+    <button id="three" data-no="1">불투명</button>
+  </body>
+</html>

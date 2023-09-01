@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("body").append('<div id="page"></div>'); // .append()는 body 자식요소 맨뒤에 추가됨
+
+        function myfnc() {
+          $("#page").html(
+            "display : " +
+              $("p").css("display") +
+              "<br>" +
+              "opacity : " +
+              $("p").css("opacity")
+          );
+        }
+        /*$("#one").click(function () {
+          $("p").fadeTo(1000, 0, function () {
+            myfnc();
+          });
+        });
+        $("#two").click(function () {
+          $("p").fadeTo(1000, 0.5, function () {
+            myfnc();
+          });
+        });
+        $("#three").click(function () {
+          $("p").fadeTo(1000, 1, function () {
+            myfnc();
+          });
+        });
+        $("#three").click(function () {
+          $("p").fadeTo(1000, 1, myfnc);
+        });*/
+
+        /*$("button").click(function () {
+          $("p").fadeTo(1000, $(this).text(), myfnc);
+        });*/
+        $("button").click(function () {
+          let num = $(this).text(); // 반복이면 웬만하면 변수 만들어서 이용하면됨
+          $("p").fadeTo(1000, num, myfnc);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <button id="one">0</button>
+    <button id="two">0.5</button>
+    <button id="three">1</button>
+  </body>
+</html>

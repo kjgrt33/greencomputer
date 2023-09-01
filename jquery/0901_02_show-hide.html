@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+      section {
+        height: 1000px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+      }
+    </style>
+    <script>
+      $(function () {
+        // speed, easing, callback
+        // speed : "fast", "slow", "1000". 1000(밀리초)은 1s
+        // easing : "swing", "linear"
+
+        $("#hide").click(function () {
+          // $(this).text("show");
+          let txt = $("#hide").text();
+          if (txt == "hide") {
+            $("p").hide(1000, function () {
+              $("#hide").text("show");
+              console.log(txt);
+            }); // hide는 display:none;처리로 되서 원래있던 공간이 없어짐
+          } else {
+            $("p").show(1000, function () {
+              $("#hide").text("hide");
+            });
+          }
+        });
+
+        $("#show").click(function () {
+          $("p").show();
+        });
+        $("#toggle").click(function () {
+          $("p").toggle();
+        });
+
+        // a태그 링크로 인해 맨위로 가는것을 막아주는 방법 2가지
+        /*$("a").click(function (e) {
+          e.preventDefault(); // e.preventDefault 기본적인 a태그의 경로를 막는 기능. 실행구문의 처음에 넣어야함
+          $("div").fadeOut();
+        });*/
+        $("a").click(function () {
+          let txt = $("a").text();
+          if (txt == "fadeOut") {
+            $("div").fadeOut(1000, function () {
+              $("a").text("fadeIn");
+            });
+          } else {
+            $("div").fadeIn(1000, function () {
+              $("a").text("fadeOut");
+            });
+          }
+          return false; // 실행구문에 마지막에 넣어야함
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p></p>
+    <!-- <button id="show">show</button> -->
+    <button id="hide">hide</button>
+    <button id="toggle">toggle</button>
+    <section></section>
+    <div></div>
+    <a href="#">fadeOut</a>
+  </body>
+</html>
