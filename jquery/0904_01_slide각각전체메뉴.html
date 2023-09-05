@@ -352,7 +352,7 @@
           function () {
             let i = $(this).index();
             console.log(i);
-            $(".submenu").eq(i).siblings().css({ display: "none" });
+            $(".submenu").eq(i).siblings().css({ display: "none" }); // 모든메뉴가 한메뉴면 이것만 지우면 가능!
             $(".submenu").eq(i).stop().slideDown();
             $(".menu ul li").eq(i).find("a").addClass("on");
           },
