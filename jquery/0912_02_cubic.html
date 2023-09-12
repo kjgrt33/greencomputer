@@ -58,7 +58,24 @@
       }
     </style>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script></script>
+    <script>
+      $(function () {
+        let x = 0; //x=x=90 x+=90, x=x-90 x-=90
+        let y = 0; //y=y+90 y+=90 , y=y-90 y-=90
+        $("#right").click(function () {
+          $("#contents").css({ transform: "rotateY(" + (y += 90) + "deg)" });
+        });
+        $("#left").click(function () {
+          $("#contents").css({ transform: "rotateY(" + (y -= 90) + "deg)" });
+        });
+        $("#top").click(function () {
+          $("#contents").css({ transform: "rotateX(" + (x += 90) + "deg)" });
+        });
+        $("#bottom").click(function () {
+          $("#contents").css({ transform: "rotateX(" + (x -= 90) + "deg)" });
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="cubic">

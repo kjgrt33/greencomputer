@@ -31,6 +31,7 @@
         height: 200px;
         transform-style: preserve-3d;
         transition: 1s;
+        transition-timing-function: linear;
       }
       #contents img {
         position: absolute;
@@ -57,7 +58,27 @@
       }
     </style>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script></script>
+    <script>
+      $(function () {
+        let x = 0; //x=x=90 x+=90, x=x-90 x-=90
+        let y = 0; //y=y+60 y+=60 , y=y-60 y-=60
+        $("#right").click(function () {
+          $("#contents").css({ transform: "rotateY(" + (y += 60) + "deg)" });
+        });
+        $("#left").click(function () {
+          $("#contents").css({ transform: "rotateY(" + (y -= 60) + "deg)" });
+        });
+        $("#top").click(function () {
+          $("#contents").css({ transform: "rotateX(" + (x += 90) + "deg)" });
+        });
+        $("#bottom").click(function () {
+          $("#contents").css({ transform: "rotateX(" + (x -= 90) + "deg)" });
+        });
+        setInterval(function () {
+          $("#right").trigger("click");
+        }, 1000);
+      });
+    </script>
   </head>
   <body>
     <div id="cubic">
