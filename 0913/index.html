@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        width: 100%;
+        height: 23000px;
+        font-family: "Orbitron", sans-serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      .bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url(images/bg.jpg) center top/cover no-repeat;
+      }
+      .nav {
+        position: fixed;
+        left: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+      .nav li {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        margin-bottom: 20px;
+        color: #fff;
+        cursor: pointer;
+      }
+      .nav li span {
+        position: absolute;
+        display: block;
+        width: 3%;
+        height: 100%;
+        transform: skewX(-30deg);
+        box-shadow: 1px 1px 1px #000;
+      }
+      .nav li.on span {
+        width: 100%;
+        /* transition: 0.5s; */
+      }
+      .nav li:first-child span {
+        background: #ff0f51;
+      }
+      .nav li:nth-child(2) span {
+        background: #fffb02;
+      }
+      .nav li:nth-child(3) span {
+        background: #b57de4;
+      }
+      .nav li:nth-child(4) span {
+        background: #7cf923;
+      }
+      .nav li:nth-child(5) span {
+        background: #3dbdfa;
+      }
+      .nav li em {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        font-weight: 600;
+        text-shadow: 1px 1px 1px #000;
+      }
+      section {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        perspective: 2300px;
+      }
+      section article {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+      }
+      section article.on {
+        opacity: 1;
+        z-index: 1;
+      }
+      section article img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      section article:first-child {
+        transform: translateZ(0);
+      }
+      section article:nth-child(2) {
+        transform: translateZ(
+          -5000px
+        ); /* -음의값은 뒤로감  z를 씀으로 부모한테 원근감을 주기위해서 perspective 줘야함*/
+      }
+      section article:nth-child(3) {
+        transform: translateZ(-10000px); /* -음의값은 뒤로감 */
+      }
+      section article:nth-child(4) {
+        transform: translateZ(-15000px); /* -음의값은 뒤로감 */
+      }
+      section article:nth-child(5) {
+        transform: translateZ(-20000px); /* -음의값은 뒤로감 */
+      }
+    </style>
+    <script>
+      $(function () {
+        $("html, body").stop().animate({ scrollTop: 0 }, 1500);
+        $(window).scroll(function () {
+          let scroll = $(this).scrollTop();
+          console.log(scroll);
+          for (let i = 0; i < 5; i++) {
+            $("section article")
+              .eq(i)
+              .css({
+                transform: "translateZ(" + parseInt(-5000 * i + scroll) + "px",
+              });
+            if (scroll >= i * 5000 && scroll < (i + 1) * 5000) {
+              $(".nav li").removeClass();
+              $(".nav li").eq(i).addClass("on");
+              $("section article").removeClass();
+              $("section article").eq(i).addClass("on");
+            }
+          }
+        });
+        $(".nav li").click(function () {
+          let i = $(this).index();
+          $("html, body")
+            .stop()
+            .animate({ scrollTop: i * 5000 }, 1500);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <ul class="nav">
+      <li class="on"><span></span><em>Player 1</em></li>
+      <li><span></span><em>Player 2</em></li>
+      <li><span></span><em>Player 3</em></li>
+      <li><span></span><em>Player 4</em></li>
+      <li><span></span><em>Player 5</em></li>
+    </ul>
+    <section>
+      <article class="on">
+        <img src="images/pic11.png" alt="pic11" />
+        <img src="images/pic12.png" alt="pic12" />
+        <img src="images/player1.png" alt="player1" />
+      </article>
+      <article>
+        <img src="images/pic21.png" alt="pic21" />
+        <img src="images/player2.png" alt="player2" />
+      </article>
+      <article>
+        <img src="images/pic31.png" alt="pic31" />
+        <img src="images/player3.png" alt="player3" />
+      </article>
+      <article>
+        <img src="images/pic41.png" alt="pic41" />
+        <img src="images/pic42.png" alt="pic42" />
+        <img src="images/player4.png" alt="player4" />
+      </article>
+      <article>
+        <img src="images/pic51.png" alt="pic51" />
+        <img src="images/pic52.png" alt="pic52" />
+        <img src="images/player5.png" alt="player5" />
+      </article>
+    </section>
+  </body>
+</html>
