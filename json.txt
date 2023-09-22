@@ -1,0 +1,35 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Ayu Light Bordered",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.minimap.enabled": false,
+  // "prettier.printWidth": 300,
+  "prettier.bracketSameLine": true,
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "indentRainbow.colorOnWhiteSpaceOnly": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": true,
+  "colorize.languages": ["typescript", "scss", "Html", "css", "javascript"],
+  "files.autoSave": "afterDelay",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.autofetch": true,
+  "workbench.startupEditor": "none",
+  "git.confirmSync": false,
+  "vscode-edge-devtools.webhintInstallNotification": true,
+  "liveSassCompile.settings.formats": [
+    // This is the default.
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": "~/../css",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "editor.hover.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.commandCenter": true
+}
