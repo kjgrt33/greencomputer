@@ -1,0 +1,22 @@
+body{background:#000;}
+.main{
+  font-size:140px;
+  color:#fff;
+  display:inline-block;
+  line-height:1.2;
+}
+.main p{
+  overflow:hidden;
+  animation:ani 1.8s
+}
+.visual.motion .main{
+  transform:translate(0,0) skewY(0deg);
+}
+@keyframes ani{
+  0%{opacity:0;}
+  30%{
+    opacity:0;
+  transform:translate(0,-90px) skewY(-10deg);
+    transform-origin:left top;
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+.box{
+  width:100px;
+  height:100px;
+}
+.green{
+  background:green;
+/*   transform:scale(0);
+  opacity:0; */
+}
+.purple{
+  background:purple;
+}
+.blue{
+  background:blue;
+}
