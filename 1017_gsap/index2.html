@@ -72,6 +72,38 @@
           opacity: 0;
         }
       }
+      .work {
+        height: 100vh;
+        position: relative;
+      }
+      .work ul {
+        display: flex;
+        padding: 3% 30%;
+        box-sizing: border-box;
+      }
+      .work ul li {
+        width: 700px;
+        padding: 100px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      }
+      .work ul li a {
+        display: block;
+        width: 100%;
+      }
+      .work ul li a img {
+        width: 100%;
+      }
+      .con03 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .con03 h1 {
+        font-size: 150px;
+      }
     </style>
   </head>
   <body>
@@ -151,6 +183,20 @@
       $(function () {
         $(".animate").scrolla();
         Splitting();
+        gsap.registerPlugin(ScrollTrigger);
+        let list = gsap.utils.toArray(".work ul li");
+        let tween = gsap.to(list, {
+          xPercent: -100 * (list.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".work",
+            start: "center center",
+            end: "350%",
+            pin: true,
+            scrub: 3,
+            markers: true,
+          },
+        });
       });
     </script>
   </body>

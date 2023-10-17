@@ -18,7 +18,7 @@
       }
       a {
         text-decoration: none;
-        color: inherit; /* 부모컬러를 그래로 상속받는다. */
+        color: inherit;
       }
       section {
         width: 100%;
@@ -29,12 +29,12 @@
         justify-content: center;
         align-items: center;
       }
+      .section01 h1 {
+        font-size: 120px;
+      }
       .section01 .inner {
         width: 70%;
         margin: 0 auto;
-      }
-      .section01 h1 {
-        font-size: 120px;
       }
       .section02 ul {
         width: 70%;
@@ -45,7 +45,7 @@
       }
       .section02 ul li {
         width: 22%;
-        background: lightseagreen;
+        background: #fed700;
         height: 300px;
         border-radius: 20px;
         display: flex;
@@ -56,7 +56,7 @@
         position: relative;
       }
       .section03 h1 {
-        -webkit-text-stroke: 2px #b1dd40; /* 폰트에 stroke할때는 무조건 -webkit-써야함 !!! */
+        -webkit-text-stroke: 2px #b1dd40;
         font-size: 150px;
         color: transparent;
       }
@@ -75,24 +75,24 @@
         line-height: 350px;
         font-size: 28px;
       }
-      .section03 .a {
-        transform: translate(-50%, -50%) rotate(-12deg); /* rotate를 하려면 기존 transform을 먼저 정의하고 해야함. */
+      .section03 span.a {
+        transform: translate(-50%, -50%) rotate(-12deg);
       }
-      .section03 .b {
-        transform: translate(-50%, -50%) rotate(12deg);
+      .section03 span.b {
         background: #ffbbcc;
+        transform: translate(-50%, -50%) rotate(12deg);
       }
-      .section03 .c {
+      .section03 span.c {
+        background: #ffcccc;
         transform: translate(-50%, -50%) rotate(-15deg);
-        background: lightskyblue;
       }
-      .section03 .d {
+      .section03 span.d {
+        background: #df9773;
         transform: translate(-50%, -50%) rotate(18deg);
-        background: violet;
       }
-      .section03 .e {
+      .section03 span.e {
+        background: #d9eccb;
         transform: translate(-50%, -50%) rotate(-3deg);
-        background: lightsalmon;
       }
     </style>
   </head>
@@ -107,10 +107,7 @@
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            remaining essentially unchanged.
           </p>
         </div>
       </section>
@@ -137,19 +134,19 @@
         .timeline({
           scrollTrigger: {
             trigger: ".section02 ul",
-            start: "0% 90%", // .section02 ul의 0%, 브라우저 90%에서 애니메이션 시작
+            start: "0% 90%", //.section02 ul의 50% 브라우저의 50%에서 애니메이션 시작
             end: "20% 100%",
             //markers: true,
-            scrub: 3, //scrub은 되감기 1,2,3 숫자가 클수록 부드럽게
+            scrub: 3, //1,2,3
           },
         })
-        .to(".section02 ul li", {
-          y: -400,
+        .from(".section02 ul li", {
+          y: 400,
           duration: 1,
           ease: "none",
           stagger: 0.2,
         });
-      /* .to(".section02 ul li:nth-child(1)", {
+      /*.to(".section02 ul li:nth-child(1)", {
           y: -400,
           duration: 1,
           ease: "none",
@@ -161,7 +158,7 @@
             duration: 1,
             ease: "none",
           },
-          0.4 // delay
+          0.4
         )
         .to(
           ".section02 ul li:nth-child(3)",
@@ -170,7 +167,7 @@
             duration: 1,
             ease: "none",
           },
-          0.6 // delay
+          0.6
         )
         .to(
           ".section02 ul li:nth-child(4)",
@@ -179,20 +176,20 @@
             duration: 1,
             ease: "none",
           },
-          0.8 // delay
-        ); */
+          0.8
+        );*/
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".section03",
-            start: "0% 0%",
-            end: "100% 0%",
+            start: "0%",
+            end: "100%",
             markers: true,
             scrub: 3,
-            pin: true, //pin은 고정. position fixed와 비슷
+            pin: true,
           },
         })
-        .from(".section03 span", { yPercent: 400, duration: 1, stagger: 1 }); // stagger는 대기하는 시간
+        .from(".section03 span", { yPercent: 400, duration: 1, stagger: 1 });
     </script>
   </body>
 </html>
